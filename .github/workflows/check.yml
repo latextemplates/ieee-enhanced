@@ -31,7 +31,7 @@ jobs:
       # Highlight mis-spelled words in the PDF
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: aspell aspell-en
+          packages: aspell aspell-en aspell-de
           version: 1.0
           execute_install_scripts: true
       - name: aspell
