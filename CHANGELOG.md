@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [2025-03-04]
+
+### Changed
+
+- Switched from `paper-conference*` to `paper-*` as keeping `-conference` increases maintenance effort.
+
 ## [2025-02-12]
 
 ### Fixed
@@ -154,6 +160,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 First release using semantic versioning.
 
+[2025-03-04]: https://github.com/latextemplates/IEEE/compare/2025-02-12...2025-03-04
 [2025-02-12]: https://github.com/latextemplates/IEEE/compare/2025-01-31...2025-02-12
 [2025-01-31]: https://github.com/latextemplates/IEEE/compare/2025-01-25...2025-01-31
 [2025-01-25]: https://github.com/latextemplates/IEEE/compare/2025-01-20...2025-01-25

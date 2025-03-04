@@ -1,9 +1,8 @@
 name: Update Files
 on:
-  pull_request:
   push:
     branches:
-      - main
+      - update-ltg
   workflow_dispatch:
 concurrency:
   group: "${{ github.workflow }}-${{ github.head_ref || github.ref }}"
@@ -59,14 +58,9 @@ jobs:
       - name: Prepare files
         working-directory: /tmp/ltg
         run: |
-          # We update check.yml manually (due to rights management of GitHub and "paper-conference.tex" naming)
-          rm .github/workflows/check.yml
-
           if [ "${{ matrix.listings }}" == "minted" ]; then
-            # paper-conference.tex should not be overwritten
-            mv paper.tex paper-conference-minted.tex
-          else
-            mv paper.tex paper-conference.tex
+            # paper.tex should not be overwritten
+            mv paper.tex paper-minted.tex
           fi
 
           # remove files which should not be overwritten
@@ -134,7 +128,7 @@ jobs:
       - run: |
           mkdir publish
           cp *.pdf publish/
-          cp paper-conference.tex publish/
+          cp paper.tex publish/
           cp README.md publish/
           cp .github/_config.yml publish/
       - uses: actions/upload-artifact@v4
