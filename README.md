@@ -1,4 +1,4 @@
-# Simplified IEEE Template
+# Enhanced IEEE Template
 
 > Quick start for modern LaTeXing for an IEEE conference, based on the [Manuscript Template for Conference Proceedings](https://www.ieee.org/conferences_events/conferences/publishing/templates.html).
 
