@@ -105,8 +105,8 @@ A first step towards that is done at the [biblatex-ieee package](https://ctan.or
 
 ## Examples
 
-- [paper.pdf](https://latextemplates.github.io/IEEE/paper.pdf) - regular conference paper.
-- [paper-minted.pdf](https://latextemplates.github.io/IEEE/paper-minted.pdf) - conference paper showing minted in action.
+- [paper.pdf](https://latextemplates.github.io/ieee-enhanced/paper.pdf) - regular conference paper.
+- [paper-minted.pdf](https://latextemplates.github.io/ieee-enhanced/paper-minted.pdf) - conference paper showing minted in action.
 
 ## Quick start
 
