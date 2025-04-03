@@ -41,6 +41,7 @@ jobs:
         run: |
           for tex in $(ls *.tex content/*.tex 2>/dev/null); do
             # The lualatex package "spelling" requires the content to be in a file ending with ".spell.bad"
+            aspell --version
             aspell --mode=tex -l en_US --encoding=utf-8 --conf=./.aspell.conf -p ./.aspell.en.pws list < $tex | sort | uniq >> paper.spell.bad
           done
       - run: latexmk paper
