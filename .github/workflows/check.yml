@@ -11,6 +11,9 @@ jobs:
   pdf:
     name: pdf (latexmk paper)
     runs-on: ubuntu-latest
+    env:
+      LANG: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
