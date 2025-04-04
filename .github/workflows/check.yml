@@ -117,11 +117,8 @@ jobs:
           echo "| -- | -- |" >> $GITHUB_STEP_SUMMARY
           failure=0
           for tex in $(ls *.tex content/*.tex 2>/dev/null); do
-            # debub output
-            aspell --mode=tex -l en_US --encoding=utf-8 --conf=./.aspell.conf -p ./.aspell.en.pws list < $tex
-            
             # Words are output in the order they appear in the document
-            words=$(aspell --mode=tex -l en_US --encoding=utf-8 --conf=./.aspell.conf -p ./.aspell.en.pws list < $tex | tr '\n' ' ')
+            words=$(aspell --mode=tex -l en_US --conf=./.aspell.conf -p ./.aspell.en.pws list < $tex | tr '\n' ' ')
             if [ -z "$words" ]; then
               echo "| $tex | ✅ |" >> $GITHUB_STEP_SUMMARY
             else
