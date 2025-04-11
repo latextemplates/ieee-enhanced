@@ -8,7 +8,6 @@
 % -*- coding:utf-8 mod:LaTeX -*-
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
-% For the final version, replace "draftcls" by "final"
 \documentclass[conference,a4paper,english]{IEEEtran}[2015/08/26]
 
 % Balance the last page using the balance package (see https://ctan.org/pkg/balance)
@@ -70,6 +69,7 @@
   % For more information see https://ctan.org/pkg/selnolig
   % language "english" or "ngerman" is passed to selnolig by the document class
   \usepackage{selnolig}
+
 \else
   % use nicer font for code
   \usepackage[zerostyle=b,scaled=.75]{newtxtt}
@@ -437,12 +437,6 @@
 % Add manual adapted hyphenation of English words
 % See https://ctan.org/pkg/hyphenex and https://tex.stackexchange.com/a/22892/9075 for details
 \input{ushyphex}
-
-\ifluatex
-  % Enable correct rendering of ligatures - provided by https://ctan.org/pkg/selnolig
-  % See ADR-0009 for alternatives
-  \usepackage{selnolig}
-\fi
 
 % correct bad hyphenation here
 \hyphenation{
