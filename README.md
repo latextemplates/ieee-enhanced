@@ -2,6 +2,9 @@
 
 > Quick start for modern LaTeXing for an IEEE conference, based on the [Manuscript Template for Conference Proceedings](https://www.ieee.org/conferences_events/conferences/publishing/templates.html).
 
+Please be aware that this template is optimized for overleaf, which is based on TeXLive 2024.
+In case you are running a later TeXLive version (or use MiKTeX), please regenerate the template with the help of the [latex template generator].
+
 The official template is distributed via CTAN as the [IEEEtran package](https://ctan.org/pkg/ieeetran), which is actively maintained.
 However, de-facto configurations (hyperref) and modern features of latex (microtype) are not configured.
 This template does it.
@@ -344,11 +347,20 @@ Moreover, ensure that python and [pygments](https://pygments.org/) are installed
 
 ### Q: I have troubles with minted on Windows.
 
+For instance, on gets following output:
+
+```text
+! Package minted Error: minted v3+ executable is not installed, is not added to
+ PATH, or is not permitted with restricted shell escape; or MiKTeX is being use
+d with -aux-directory or -output-directory without setting a TEXMF_OUTPUT_DIREC
+TORY environment variable.
+```
+
 Try out following command to update `latexminted`.
 See [minted#425](https://github.com/gpoore/minted/issues/425) for details.
 
 ```shell
-py -m pip install --force-reinstall latexminted
+python3 -m pip install --force-reinstall latexminted
 ```
 
 ### Q: Is it possible produce a self-archiving version?
