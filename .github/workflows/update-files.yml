@@ -16,7 +16,7 @@ jobs:
         listings: [listings, minted]
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
           ref: '${{ github.event.pull_request.head.ref }}'
@@ -99,7 +99,7 @@ jobs:
     needs: [generatetex]
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: '${{ github.event.pull_request.head.ref }}'
       - run: |
