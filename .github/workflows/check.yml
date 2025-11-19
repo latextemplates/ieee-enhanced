@@ -164,7 +164,7 @@ jobs:
           version: 1.0
           execute_install_scripts: true
       - name: Install latexindent
-        uses: zauguin/install-texlive@v4
+        uses: zauguin/install-texlive@v5
         with:
           packages: latexindent
           texlive_version: 2025
