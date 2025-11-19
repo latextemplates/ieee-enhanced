@@ -79,7 +79,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v5
       - name: Install TeX Live
-        uses: zauguin/install-texlive@v5
+        uses: zauguin/install-texlive@v4
         with:
           package_file: '${{ github.workspace }}/Texlivefile'
           texlive_version: 2025
@@ -164,7 +164,7 @@ jobs:
           version: 1.0
           execute_install_scripts: true
       - name: Install latexindent
-        uses: zauguin/install-texlive@v5
+        uses: zauguin/install-texlive@v4
         with:
           packages: latexindent
           texlive_version: 2025
