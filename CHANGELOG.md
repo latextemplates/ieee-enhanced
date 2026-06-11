@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
 ## [2025-04-11]
@@ -161,7 +161,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 ### Added
 
 - One more lipsum paragraph on first page and separate Lorem Ipsum section.
-- Enforce version V1.8b (2015/08/26) of [IEEEtrans.cls](http://www.michaelshell.org/tex/ieeetran/).
+- Enforce version V1.8b (2015/08/26) of [IEEEtrans.cls](https://www.michaelshell.org/tex/ieeetran/).
 
 ### Changed
 
