@@ -122,6 +122,8 @@ pdflscape
 pdftexcmds
 pdfpages
 pgf
+pgfplots
+plantuml
 pict2e
 placeins
 preprint
