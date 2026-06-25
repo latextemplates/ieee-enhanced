@@ -94,7 +94,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Changed
 
-- `_latexmkrc` is available instead of `latexmkrc` to ease usage at overleaf. [lncs#40](https://github.com/latextemplates/LNCS/issues/40)
+- `_latexmkrc` is available instead of `latexmkrc` to ease usage at overleaf. [lncs#40](https://github.com/latextemplates/lncs-enhanced/issues/40)
 
 ### Fixed
 
@@ -182,22 +182,22 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 First release using semantic versioning.
 
-[Unreleased]: https://github.com/latextemplates/IEEE/compare/2026-06-25...HEAD
-[2026-06-25]: https://github.com/latextemplates/IEEE/compare/2025-04-11...2026-06-25
-[2025-04-11]: https://github.com/latextemplates/IEEE/compare/2025-03-04...2025-04-11
-[2025-03-04]: https://github.com/latextemplates/IEEE/compare/2025-02-12...2025-03-04
-[2025-02-12]: https://github.com/latextemplates/IEEE/compare/2025-01-31...2025-02-12
-[2025-01-31]: https://github.com/latextemplates/IEEE/compare/2025-01-25...2025-01-31
-[2025-01-25]: https://github.com/latextemplates/IEEE/compare/2025-01-20...2025-01-25
-[2025-01-20]: https://github.com/latextemplates/IEEE/compare/2025-01-14...2025-01-20
-[2025-01-14]: https://github.com/latextemplates/IEEE/compare/2022-06-06...2025-01-14
-[2022-06-06]: https://github.com/latextemplates/IEEE/compare/2022-02-28...2022-06-06
-[2022-02-28]: https://github.com/latextemplates/IEEE/compare/1.5.0...2022-02-28
-[1.5.0]: https://github.com/latextemplates/IEEE/compare/1.4.0...1.5.0
-[1.4.0]: https://github.com/latextemplates/IEEE/compare/1.3.0...1.4.0
-[1.3.0]: https://github.com/latextemplates/IEEE/compare/1.2.0...1.3.0
-[1.2.0]: https://github.com/latextemplates/IEEE/compare/1.1.0...1.2.0
-[1.1.0]: https://github.com/latextemplates/IEEE/compare/1.0.0...1.1.0
-[1.0.0]: https://github.com/latextemplates/IEEE/releases/tag/1.0.0
+[Unreleased]: https://github.com/latextemplates/ieee-enhanced/compare/2026-06-25...HEAD
+[2026-06-25]: https://github.com/latextemplates/ieee-enhanced/compare/2025-04-11...2026-06-25
+[2025-04-11]: https://github.com/latextemplates/ieee-enhanced/compare/2025-03-04...2025-04-11
+[2025-03-04]: https://github.com/latextemplates/ieee-enhanced/compare/2025-02-12...2025-03-04
+[2025-02-12]: https://github.com/latextemplates/ieee-enhanced/compare/2025-01-31...2025-02-12
+[2025-01-31]: https://github.com/latextemplates/ieee-enhanced/compare/2025-01-25...2025-01-31
+[2025-01-25]: https://github.com/latextemplates/ieee-enhanced/compare/2025-01-20...2025-01-25
+[2025-01-20]: https://github.com/latextemplates/ieee-enhanced/compare/2025-01-14...2025-01-20
+[2025-01-14]: https://github.com/latextemplates/ieee-enhanced/compare/2022-06-06...2025-01-14
+[2022-06-06]: https://github.com/latextemplates/ieee-enhanced/compare/2022-02-28...2022-06-06
+[2022-02-28]: https://github.com/latextemplates/ieee-enhanced/compare/1.5.0...2022-02-28
+[1.5.0]: https://github.com/latextemplates/ieee-enhanced/compare/1.4.0...1.5.0
+[1.4.0]: https://github.com/latextemplates/ieee-enhanced/compare/1.3.0...1.4.0
+[1.3.0]: https://github.com/latextemplates/ieee-enhanced/compare/1.2.0...1.3.0
+[1.2.0]: https://github.com/latextemplates/ieee-enhanced/compare/1.1.0...1.2.0
+[1.1.0]: https://github.com/latextemplates/ieee-enhanced/compare/1.0.0...1.1.0
+[1.0.0]: https://github.com/latextemplates/ieee-enhanced/releases/tag/1.0.0
 
 <!-- markdownlint-disable-file MD024 MD033 -->
