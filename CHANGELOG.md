@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [2026-06-25]
+
+### Added
+
+- New example sections in the "LaTeX Hints" chapter: Formulas and Equations, Figures with TikZ, and Plots with pgfplots.
+
 ## [2025-04-11]
 
 ### Added
