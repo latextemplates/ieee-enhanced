@@ -817,44 +817,6 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
 \end{ltgexample}
 
 
-\subsection{Tables spanning multiple pages}
-
-The \href{https://ctan.org/pkg/longtable}{longtable} package typesets tables that automatically break across page boundaries.
-The header (\verb+\endhead+) and footer (\verb+\endfoot+) rows are repeated on every page; once enough rows are added, the table spans several pages on its own.
-
-\begin{ltgexample}
-\begin{longtable}{|l|l|l|}
-  \caption{A sample long table.}\label{tab:long} \\
-  \hline
-  \multicolumn{1}{|c|}{\textbf{First column}} & \multicolumn{1}{c|}{\textbf{Second column}} & \multicolumn{1}{c|}{\textbf{Third column}} \\ \hline
-  \endfirsthead
-
-  \multicolumn{3}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
-  \hline
-  \multicolumn{1}{|c|}{\textbf{First column}} & \multicolumn{1}{c|}{\textbf{Second column}} & \multicolumn{1}{c|}{\textbf{Third column}} \\ \hline
-  \endhead
-
-  \hline \multicolumn{3}{|r|}{{Continued on next page}} \\ \hline
-  \endfoot
-
-  \hline\hline
-  \endlastfoot
-
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-  A & BC & D \\
-\end{longtable}
-\end{ltgexample}
-
 \subsection{Source Code}
 
 \href{https://github.com/gpoore/minted}{minted} is a sophisticated package to enable properly highlighted listings.
