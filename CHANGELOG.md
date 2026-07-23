@@ -9,6 +9,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Added
 
+- The "Examples" section with the rendered example-PDF links now appears right below the title, before "Usage", so you see the output first.
 - Opt-in rectangular ("block") paragraphs: uncomment `\rectangularparagraphstrue` in the preamble to stretch every paragraph's last line to the full column width (off by default; see the comment in `paper.tex` for the copy-fitting trade-off).
 - LuaLaTeX builds avoid a lone short word as the last line of a paragraph (`impnattypo` with its `lastparline` feature; pdfLaTeX builds are unaffected). [lncs-enhanced#16](https://github.com/latextemplates/lncs-enhanced/issues/16)
 - The compiled PDF now embeds `paper.bib`, so the reference data can be extracted from the PDF (e.g., with JabRef).
