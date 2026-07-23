@@ -13,6 +13,11 @@ This template is for the conferences.
 It is based on the `bare_conf_compsoc.tex` distributed by IEEE.
 In case you need other configurations, please adapt `paper.tex` or run the [latex template generator].
 
+## Examples
+
+- [paper.pdf](https://latextemplates.github.io/ieee-enhanced/paper.pdf) - regular conference paper.
+- [paper-minted.pdf](https://latextemplates.github.io/ieee-enhanced/paper-minted.pdf) - conference paper showing minted in action.
+
 ## Usage
 
 - `paper.tex` is the main document
@@ -105,11 +110,6 @@ Hints on writing an abstract and thesis by Dirk Fahland.
 
 There is currently no official biblatex support.
 A first step towards that is done at the [biblatex-ieee package](https://ctan.org/pkg/biblatex-ieee).
-
-## Examples
-
-- [paper.pdf](https://latextemplates.github.io/ieee-enhanced/paper.pdf) - regular conference paper.
-- [paper-minted.pdf](https://latextemplates.github.io/ieee-enhanced/paper-minted.pdf) - conference paper showing minted in action.
 
 ## Quick start
 
