@@ -16,7 +16,7 @@ jobs:
         listings: [listings, minted]
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           ref: '${{ github.event.pull_request.head.ref }}'
@@ -86,7 +86,7 @@ jobs:
           git status
           git diff
       - name: Commit changes
-        uses: EndBug/add-and-commit@v10
+        uses: EndBug/add-and-commit@v11
         with:
           message: 'Update files based on generated files by template generator'
           author_name: 'github-actions[bot]'
@@ -100,7 +100,7 @@ jobs:
     needs: [generatetex]
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: '${{ github.event.pull_request.head.ref }}'
       - run: |
