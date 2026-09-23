@@ -436,12 +436,14 @@
 \usepackage[incolumn]{mindflow}
 
 % Extensions for references inside the document (\zcref{fig:sample}, ...)
-% Use \zcref{...} (and \zcref[S]{...} at the beginning of a sentence) instead of \ref: Type of reference included in the link
+% Use \zcref{...} (and \Zcref{...} at the beginning of a sentence) instead of \ref: Type of reference included in the link
 % That means, "Figure 5" is a full link instead of just "5".
 % The names follow the document language (babel); zref-clever is compatible with tagged PDFs.
 % Each \label also sets a zref label, so \zcref works with standard \label.
 \usepackage{zref-clever}
 \zcsetup{cap, nameinlink=true}
+% \Zcref{...} is short for \zcref[S]{...}: capitalized, unabbreviated name at the beginning of a sentence
+\NewDocumentCommand{\Zcref}{s O{} m}{\IfBooleanTF{#1}{\zcref*[S,#2]{#3}}{\zcref[S,#2]{#3}}}
 
 \usepackage{lipsum}
 
@@ -732,7 +734,7 @@ Quoting with "`quote"' or ``quote'' also works.
 \subsection{Zref-clever examples}
 \label{sec:ex:cref}
 
-zref-clever demonstration: zcref[S] at beginning of sentence, zcref in all other cases.
+zref-clever demonstration: Zcref (short for zcref[S]) at beginning of sentence, zcref in all other cases.
 
 \begin{figure}
   \centering
@@ -756,17 +758,17 @@ zref-clever demonstration: zcref[S] at beginning of sentence, zcref in all other
 \end{figure}
 
 \begin{ltgexample}
-\zcref[S]{fig:ex:cref} shows a simple fact, although \zcref{fig:ex:cref} could also show something else.
+\Zcref{fig:ex:cref} shows a simple fact, although \zcref{fig:ex:cref} could also show something else.
 
-\zcref[S]{tab:ex:cref} shows a simple fact, although \zcref{tab:ex:cref} could also show something else.
+\Zcref{tab:ex:cref} shows a simple fact, although \zcref{tab:ex:cref} could also show something else.
 
-\zcref[S]{sec:ex:cref} shows a simple fact, although \zcref{sec:ex:cref} could also show something else.
+\Zcref{sec:ex:cref} shows a simple fact, although \zcref{sec:ex:cref} could also show something else.
 \end{ltgexample}
 
 \subsection{Figures}
 
 \begin{ltgexample}
-\zcref[S]{fig:label} shows something interesting.
+\Zcref{fig:label} shows something interesting.
 
 \begin{figure}
   \centering
@@ -925,8 +927,8 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
 \subsection{Source Code}
 
 \begin{ltgexample}
-\zcref[S]{lst:XML} shows source code written in XML.
-\zcref[S]{line:comment} contains a comment.
+\Zcref{lst:XML} shows source code written in XML.
+\Zcref{line:comment} contains a comment.
 
 \begin{lstlisting}[
   language=XML,
@@ -940,7 +942,7 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
 \end{ltgexample}
 
 One can also add \verb+float+ as parameter to have the listing floating.
-\zcref[S]{lst:flXML} shows the floating listing.
+\Zcref{lst:flXML} shows the floating listing.
 
 \begin{ltgexample}
 \begin{lstlisting}[
