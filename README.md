@@ -127,6 +127,24 @@ A first step towards that is done at the [biblatex-ieee package](https://ctan.or
 - Edit [paper.tex](paper.tex).
 - `latexmk paper`.
 
+## Using the template for a THU term paper
+
+Technische Hochschule Ulm (THU) bases its term paper template on the IEEE conference template.
+To follow the THU requirements (as of the THU template v1.0 of 2023-09-23 by Markus Goldstein):
+
+- Enable page numbers: uncomment `\pagestyle{plain}` after `\maketitle`.
+- Use the THU affiliation in the author block:
+
+  ```latex
+  \author{\IEEEauthorblockN{Given Name Surname}
+  \IEEEauthorblockA{\textit{Department of Computer Science} \\
+  \textit{Ulm University of Applied Sciences (THU)}\\
+  Ulm, Germany \\
+  youremail@thu.de}}
+  ```
+
+Everything else (A4 paper, numeric citations with `natbib` and `IEEEtranN`, `\citet`, links without colored boxes) is already set up.
+
 ## Attention regarding `compsocconf`
 
 Some conferences distribute a `IEEEtran.cls` V1.7a dated 2007 and a parameter `compsocconf`.
