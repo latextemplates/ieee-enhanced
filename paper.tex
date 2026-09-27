@@ -540,6 +540,10 @@
 % make the title area
 \maketitle
 
+% Page numbers: enable for submissions/reviews and non-IEEE use (e.g., THU term papers).
+% Keep disabled for the IEEE camera-ready version; IEEE adds page numbers itself.
+%\pagestyle{plain}
+
 % In case you want to add a copyright statement.
 % Works only in the compsoc conference mode.
 %
@@ -589,6 +593,10 @@ Finally, a conclusion is drawn and outlook on future work is made (\zcref{sec:ou
 Winery~\citep{Winery} is a graphical \textcomment{modeling}{modeling with one ``l'', because of American English} tool.
 The whole idea of TOSCA is explained by \citet{Binz2009}.
 
+To search for related work, \href{https://www.scienceos.ai/}{ScienceOS}\footnote{\url{https://www.scienceos.ai/}} can be used; it stores data in the EU and backs its answers with citations, which you still have to read and check yourself.
+Writing hints for student theses are given in the open-access book \href{https://vdf.ch/product/student-thesis-projects-en.html}{\emph{Student Thesis Projects}}\footnote{\url{https://vdf.ch/product/student-thesis-projects-en.html}}.
+More hints are given in \href{https://doi.org/10.1007/978-1-4471-6639-9}{\emph{Writing for Computer Science}}\footnote{\url{https://doi.org/10.1007/978-1-4471-6639-9}}.
+
 \section{LaTeX Hints}
 \label{sec:latexhints}
 
@@ -615,6 +623,8 @@ The whole idea of TOSCA is explained by \citet{Binz2009}.
         lastline=\the\LTGendlineexample,
         firstnumber=\the\LTGbeginlineexample,
         basewidth=.5em,
+        % break long lines even without whitespace (e.g., \includegraphics[...]{...}); otherwise they run out of the box
+        breakatwhitespace=false,
         aboveskip=0mm,
         belowskip=0mm,
         numbers=left,
@@ -750,7 +760,7 @@ zref-clever demonstration: Zcref (short for zcref[S]) at beginning of sentence, 
     Heading1 & Heading2 \\
     \midrule
     One      & Two      \\
-    Thee     & Four     \\
+    Three    & Four     \\
     \bottomrule
   \end{tabular}
   \caption{Example table for zcref demo}
@@ -778,6 +788,17 @@ zref-clever demonstration: Zcref (short for zcref[S]) at beginning of sentence, 
     Based on \citet{mwe}.
   }
   \label{fig:label}
+\end{figure}
+\end{ltgexample}
+
+Photos in JPEG or PNG format are included the same way, as shown in \zcref{fig:jpg}.
+
+\begin{ltgexample}
+\begin{figure}
+  \centering
+  \includegraphics[width=.5\linewidth]{figures/ulm-minster.jpg}
+  \caption{Ulm Minster. Photo: wkrauth, CC0, via Wikimedia Commons.}
+  \label{fig:jpg}
 \end{figure}
 \end{ltgexample}
 
@@ -900,7 +921,7 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
     Heading1 & Heading2 \\
     \midrule
     One      & Two      \\
-    Thee     & Four     \\
+    Three    & Four     \\
     \bottomrule
   \end{tabular}
 \end{figure}
