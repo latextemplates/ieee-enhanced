@@ -453,7 +453,7 @@
 \usepackage{mwe}
 \usepackage[realmainfile]{currfile}
 \usepackage{tcolorbox}
-\tcbuselibrary{listings}
+\tcbuselibrary{listings,breakable}
 
 %introduce \powerset - hint by http://matheplanet.com/matheplanet/nuke/html/viewtopic.php?topic=136492&post_id=997377
 \DeclareFontFamily{U}{MnSymbolC}{}
@@ -608,6 +608,8 @@ More hints are given in \href{https://doi.org/10.1007/978-1-4471-6639-9}{\emph{W
 {\LTGendlineexample=\numexpr\inputlineno-1\relax%
   \tcbinputlisting{%
     listing only,
+    % Split across columns and pages. An unbreakable box overflows into the floats or the bottom margin when the floats of a page leave the narrow columns too little room
+    breakable,
     listing file=\currfilepath,
     colback=green!5!white,
     colframe=green!25,
@@ -823,7 +825,7 @@ See \zcref{fig:16x9} as an example.
 An example of two sub figures is shown in \zcref{fig:two_sub_figures}.
 
 \begin{ltgexample}
-\begin{figure*}[!b]
+\begin{figure*}[!t]
   \centering
   \subfloat[Case I]{\includegraphics[width=.4\linewidth]{example-image-a}%
     \label{fig:first_case}}
@@ -845,7 +847,7 @@ e.g., \verb+\subfloat[]+.
 An example is shown in \zcref{fig:two_sub_figures_ieee}.
 
 \begin{ltgexample}
-\begin{figure*}[!b]
+\begin{figure*}[!t]
   \centering
   \subfloat[]{\includegraphics[width=.4\linewidth]{example-image-a}%
     \label{fig:first_case_ieee}}
