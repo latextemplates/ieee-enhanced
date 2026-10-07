@@ -21,6 +21,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Fixed
 
+- The sub-figure examples no longer overlap the "Corresponding LaTeX code" box in the `minted` variant: their `figure*` is placed at the top of the page (`[!t]`, as in IEEEtran's `bare_conf.tex`) instead of the bottom, and the code boxes break across columns and pages instead of overflowing when the floats of a page leave the columns too little room.
 - Long code lines without spaces (e.g., `\includegraphics[width=.4\linewidth]{example-image-a}`) in the "Corresponding LaTeX code" boxes of the `listings` variant are wrapped instead of running out of the box.
 - Fixed typos in the example and writing-hint texts.
 - `latexmk -pv` opens the PDF on Linux and macOS: the SumatraPDF viewer is only configured on Windows.
