@@ -939,16 +939,16 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
 \end{ltgexample}
 
 \begin{ltgexample}
-% Source: https://tex.stackexchange.com/a/468994/9075
+% Adapted from https://tex.stackexchange.com/a/468994/9075
 \begin{figure}
   \caption{Table with diagonal line}
   \label{tab:diag}
   \begin{center}
     \begin{tabular}{|l|c|c|}
       \hline
-      \diagbox[width=10em]{Diag \\Column Head I}{Diag Column\\Head II} & Second & Third \\
+      \diagbox{Row}{Column} & A & B \\
       \hline
-                                                                       & foo    & bar   \\
+      1                     & x & y \\
       \hline
     \end{tabular}
   \end{center}
