@@ -18,9 +18,14 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 - Cross-references use [zref-clever](https://ctan.org/pkg/zref-clever) instead of [cleveref](https://ctan.org/pkg/cleveref), because zref-clever works with tagged (accessible) PDFs: write `\zcref{...}` instead of `\cref` and, at the start of a sentence, `\Zcref{...}` (short for `\zcref[S]{...}`) instead of `\Cref`.
 - `_latexmkrc` is organized in sections and lists commented-out alternatives for continuous preview (`-pvc`), the job name, and the PDF viewer (e.g., evince).
+- The example and paper-structure texts avoid words that textlint's `write-good` rule flags (`Finally`, `rarely`, `a few`, `just`), so a fresh paper has no textlint annotations. A sentence-initial `Finally,` is allowed in `.textlintrc.json`, because it marks a sequence rather than weakening a statement.
+- The paragraph example links Andrew Stacey's *Document Revision System* by title with the URL in a footnote, and the hyphenation example shows the short `\verb` snippets `\allowbreak{}` and `"=` instead of whole words, so that neither runs out of a narrow column.
 
 ### Fixed
 
+- The sub-figure examples no longer overlap the "Corresponding LaTeX code" box in the `minted` variant: their `figure*` is placed at the top of the page (`[!t]`, as in IEEEtran's `bare_conf.tex`) instead of the bottom, and the code boxes break across columns and pages instead of overflowing when the floats of a page leave the columns too little room.
+- The two columns of the last page are balanced by the [flushend](https://ctan.org/pkg/flushend) package, also when the text ends in the first column. Before, the `balance` package was loaded but never used, and a `\balance` added by hand failed with "You have called `\balance` in second column" whenever the text reached the second column. The README explains how to switch balancing off or do it by hand with `\IEEEtriggeratref`. [#24](https://github.com/latextemplates/ieee-enhanced/issues/24)
+- The "Corresponding LaTeX code" listing of the diagonal-table example (`diagbox`) no longer runs out of the column: the table has a short first cell, so latexindent's column alignment pads the rows less.
 - Long code lines without spaces (e.g., `\includegraphics[width=.4\linewidth]{example-image-a}`) in the "Corresponding LaTeX code" boxes of the `listings` variant are wrapped instead of running out of the box.
 - Fixed typos in the example and writing-hint texts.
 - `latexmk -pv` opens the PDF on Linux and macOS: the SumatraPDF viewer is only configured on Windows.

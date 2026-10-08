@@ -12,9 +12,18 @@
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
 \documentclass[conference,a4paper,english]{IEEEtran}[2015/08/26]
 
-% Balance the last page using the balance package (see https://ctan.org/pkg/balance)
-% Alternative to balance is the pbalance package (see https://ctan.org/pkg/pbalance), which sometimes works better
-\usepackage{balance}
+% Balance the columns on the last page using the flushend package (see https://ctan.org/pkg/flushend).
+% It needs no command in the text.
+% The balance package (see https://ctan.org/pkg/balance) needs \balance in the first column of the last page, otherwise it warns "You have called \balance in second column".
+% The pbalance package (see https://ctan.org/pkg/pbalance) does not work together with stfloats, which is loaded for \fnbelowfloat.
+% IEEEtran's own way is \IEEEtriggeratref, see the bibliography section at the end of this file.
+\usepackage{flushend}
+% flushend activates its balancing output routine only right before the final \clearpage, which is too late in some documents (e.g., the German example paper under LuaLaTeX): the last page is shipped out before. Thus, \flushcolsend activates it already here.
+% flushend only balances when the text of the last page reaches the second column.
+% If the text ends in the first column, end that column and put an empty box into the second one, so that flushend distributes the text over both columns.
+\makeatletter
+\AtEndDocument{\flushcolsend\if@firstcolumn\ifdim\pagetotal>\z@\newpage\hbox to\columnwidth{}\fi\fi}
+\makeatother
 
 \usepackage{iftex}
 
@@ -382,7 +391,7 @@
 \usepackage{mwe}
 \usepackage[realmainfile]{currfile}
 \usepackage{tcolorbox}
-\tcbuselibrary{minted}
+\tcbuselibrary{minted,breakable}
 
 %introduce \powerset - hint by http://matheplanet.com/matheplanet/nuke/html/viewtopic.php?topic=136492&post_id=997377
 \DeclareFontFamily{U}{MnSymbolC}{}
@@ -514,7 +523,7 @@
 
 The remainder of the paper starts with a presentation of related work (\zcref{sec:relatedwork}).
 It is followed by a presentation of hints on \LaTeX{} (\zcref{sec:latexhints}).
-Finally, a conclusion is drawn and outlook on future work is made (\zcref{sec:outlook}).
+The paper closes with a conclusion and an outlook on future work (\zcref{sec:outlook}).
 
 \section{Related Work}
 \label{sec:relatedwork}
@@ -537,6 +546,8 @@ More hints are given in \href{https://doi.org/10.1007/978-1-4471-6639-9}{\emph{W
 {\LTGendlineexample=\numexpr\inputlineno-1\relax%
   \tcbinputlisting{%
     listing only,
+    % Split across columns and pages. An unbreakable box overflows into the floats or the bottom margin when the floats of a page leave the narrow columns too little room
+    breakable,
     listing file=\currfilepath,
     colback=green!5!white,
     colframe=green!25,
@@ -577,11 +588,11 @@ This leads to a hard line break.
 The text starts at the beginning of a new line.
 In LaTeX, you can do that by using two backslashes (\textbackslash\textbackslash).
 \\
-This is rarely used.
+Running text seldom needs a hard line break.
 
 Please do \textit{not} use two backslashes for new paragraphs.
 For instance, this sentence belongs to the same paragraph, whereas the last one started a new one.
-A long motivation for that is provided at \url{http://loopspace.mathforge.org/HowDidIDoThat/TeX/VCS/#section.3}.
+Andrew Stacey gives a long motivation for that in the section \enquote{Line Wrapping} of his \href{https://loopspace.mathforge.org/HowDidIDoThat/TeX/VCS/#section.3}{\emph{Document Revision System}}\footnote{\url{https://loopspace.mathforge.org/HowDidIDoThat/TeX/VCS/}}.
 \end{ltgexample}
 
 \subsection{Notes separated from the text}
@@ -632,10 +643,10 @@ Here are some hints:
 
 \begin{ltgexample}
 In case you write \enquote{application-specific}, then the word will only be hyphenated at the dash.
-You can also write \verb1applica\allowbreak{}tion-specific1 (result: applica\allowbreak{}tion-specific), but this is much more effort.
+You can also insert \verb1\allowbreak{}1 into the word, as in applica\allowbreak{}tion-specific, but this is much more effort.
 
 You can now write words containing hyphens which are hyphenated at other places in the word.
-For instance, \verb1application"=specific1 gets application"=specific.
+For that, write \verb1"=1 instead of \verb1-1, as in application"=specific.
 This is enabled by an additional configuration of the babel package.
 \end{ltgexample}
 
@@ -746,7 +757,7 @@ See \zcref{fig:16x9} as an example.
 An example of two sub figures is shown in \zcref{fig:two_sub_figures}.
 
 \begin{ltgexample}
-\begin{figure*}[!b]
+\begin{figure*}[!t]
   \centering
   \subfloat[Case I]{\includegraphics[width=.4\linewidth]{example-image-a}%
     \label{fig:first_case}}
@@ -768,7 +779,7 @@ e.g., \verb+\subfloat[]+.
 An example is shown in \zcref{fig:two_sub_figures_ieee}.
 
 \begin{ltgexample}
-\begin{figure*}[!b]
+\begin{figure*}[!t]
   \centering
   \subfloat[]{\includegraphics[width=.4\linewidth]{example-image-a}%
     \label{fig:first_case_ieee}}
@@ -851,16 +862,16 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
 \end{ltgexample}
 
 \begin{ltgexample}
-% Source: https://tex.stackexchange.com/a/468994/9075
+% Adapted from https://tex.stackexchange.com/a/468994/9075
 \begin{figure}
   \caption{Table with diagonal line}
   \label{tab:diag}
   \begin{center}
     \begin{tabular}{|l|c|c|}
       \hline
-      \diagbox[width=10em]{Diag \\Column Head I}{Diag Column\\Head II} & Second & Third \\
+      \diagbox{Row}{Column} & A & B \\
       \hline
-                                                                       & foo    & bar   \\
+      1                     & x & y \\
       \hline
     \end{tabular}
   \end{center}
@@ -985,7 +996,7 @@ Brackets work as designed:
 One can also input backticks in verbatim text: \verb|`test`|.
 \end{ltgexample}
 
-Acronyms can be typeset in running text with \verb+\initialism+, which sets them as small caps that blend into the surrounding lowercase text. It is the lightweight alternative to the full acronym and glossary management (\verb+\gls+, with an automatic list of abbreviations) provided by the thesis variants: \verb+\initialism+ only typesets the acronym and does not add it to any list. The macro and a few ready-made acronyms (\verb+\OMG+, \verb+\BPEL+, \verb+\BPMN+, \verb+\UML+) are defined in \texttt{commands.tex}, where you can add your own.
+Acronyms can be typeset in running text with \verb+\initialism+, which sets them as small caps that blend into the surrounding lowercase text. It is the lightweight alternative to the full acronym and glossary management (\verb+\gls+, with an automatic list of abbreviations) provided by the thesis variants: \verb+\initialism+ only typesets the acronym and does not add it to any list. The macro and the ready-made acronyms (\verb+\OMG+, \verb+\BPEL+, \verb+\BPMN+, \verb+\UML+) are defined in \texttt{commands.tex}, where you can add your own.
 
 \begin{ltgexample}
 The \UML is maintained by the \OMG; related standards include \BPEL and \BPMN.
@@ -1000,7 +1011,7 @@ Any acronym can be set inline with \initialism{REST} or \initialism{HTTP}.
 % regular IEEE prefers the singular form
 \section*{Acknowledgment}
 
-Identification of funding sources and other support, and thanks to individuals and groups that assisted in the research and the preparation of the work should be included in an acknowledgment section, which is placed just before the reference section in your document \cite{acmart}.
+Identification of funding sources and other support, and thanks to individuals and groups that assisted in the research and the preparation of the work should be included in an acknowledgment section, which comes right before the reference section in your document \cite{acmart}.
 
 %%% ===============================================================================
 %%% Bibliography

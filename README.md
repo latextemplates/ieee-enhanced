@@ -342,6 +342,13 @@ Please read on there.
 The other possibility is to execute `texdoc ieeetran` and read in the documentation.
 For example, there is an explanation of how to typeset the affiliation information with four or more authors properly.
 
+### Q: How are the two columns of the last page balanced?
+
+The [flushend](https://ctan.org/pkg/flushend) package balances them automatically; no command in the text is needed.
+An `\AtEndDocument` hook in the preamble (right after `\usepackage{flushend}`) activates flushend for the last page and, when the text ends in the first column, ends that column, so that flushend distributes the text over both columns.
+If you do not want balanced columns, remove `\usepackage{flushend}` together with that hook.
+If flushend produces odd spacing on the last page (IEEEtran's author warns about that for references), balance by hand instead: remove flushend and enable `\IEEEtriggeratref{N}` in front of `\bibliographystyle`, which starts a new column before reference `N`.
+
 ### Q: How can I synchronize updates from the template to my repository?
 
 1. Initialize your git repository as usual
