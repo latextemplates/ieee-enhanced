@@ -2,8 +2,8 @@
 
 > Quick start for modern LaTeXing for an IEEE conference, based on the [Manuscript Template for Conference Proceedings](https://www.ieee.org/conferences_events/conferences/publishing/templates.html).
 
-Please be aware that this template is optimized for overleaf, which is based on TeXLive 2025.
-In case you are running a later TeXLive version (or use MiKTeX), please regenerate the template with the help of the [latex template generator].
+This template is made for TeX Live 2026.
+On Overleaf, select TeX Live 2026 in the project settings (Menu → Settings → Compiler → TeX Live version).
 
 The official template is distributed via CTAN as the [IEEEtran package](https://ctan.org/pkg/ieeetran), which is actively maintained.
 However, de-facto configurations (hyperref) and modern features of latex (microtype) are not configured.
@@ -137,7 +137,7 @@ To have `minted` running with a traditional installation, you have to do followi
 
 [latexmk] runs the LaTeX tools (e.g., lualatex and bibtex) as often as needed to get the final PDF ([why `latexmk` is great](https://tex.stackexchange.com/a/249243/9075)).
 It reads its configuration from `.latexmkrc` in the directory of the document.
-Overleaf reads `.latexmkrc`, too, so the "Compiler" setting of the Overleaf project does not matter.
+Overleaf reads `.latexmkrc`, too, so the "Compiler" setting of the Overleaf project does not matter; select TeX Live 2026 there.
 To use the configuration for all your documents, put it at [the right place](http://tex.stackexchange.com/a/41149/9075).
 
 Build the document:
