@@ -61,7 +61,7 @@ Hints on writing an abstract and thesis by Dirk Fahland.
 There is currently no official biblatex support.
 A first step towards that is done at the [biblatex-ieee package](https://ctan.org/pkg/biblatex-ieee).
 
-## Contained Directories and Files
+## Contained directories and files
 
 ### Directories
 
