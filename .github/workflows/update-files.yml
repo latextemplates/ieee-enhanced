@@ -60,9 +60,9 @@ jobs:
       - name: Prepare files
         working-directory: /tmp/ltg
         run: |
-          if [ "${{ matrix.listings }}" == "minted" ]; then
-            # paper.tex should not be overwritten
-            mv paper.tex paper-minted.tex
+          if [ "${{ matrix.listings }}" == "listings" ]; then
+            # paper.tex is the minted variant
+            mv paper.tex paper-basic-listings.tex
           fi
 
           # remove files which should not be overwritten
