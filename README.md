@@ -20,71 +20,12 @@ The LaTeX snippets this template is assembled from can be inspected at <https://
 - [paper.pdf](https://latextemplates.github.io/ieee-enhanced/paper.pdf) - regular conference paper.
 - [paper-minted.pdf](https://latextemplates.github.io/ieee-enhanced/paper-minted.pdf) - conference paper showing minted in action.
 
-## Usage
+## Quick start
 
-- `paper.tex` is the main document
-- Use "lualatex + bibtex" in your TeX editor or `latexmk paper` / `make` in the command line
-
-### Using `latexmk`
-
-[latexmk] is a very smart tool for latex compilation.
-It executes the latex tools as often as needed to get the final PDF.
-(More information about why `latexmk` is great can be found at <https://tex.stackexchange.com/a/249243/9075>.)
-
-To build the whole document, execute following command.
-Note that this requires a working perl installation.
-
-```bash
-latexmk paper
-```
-
-To enable latexmk, please move `_latexmkrc` to `latexmkrc`.
-
-If you want automatic compilation use following command:
-
-```bash
-latexmk -pvc paper
-```
-
-This will also open a [Sumatra PDF] and only works with the supplied configuration.
-
-#### latexmk configuration
-
-This repository ships a `.latexmkrc` which is read by latexmk.
-In case there is a `_latexmkrc` file, you need to rename it to `.latexmkrc`.
-It is configured for Windows and especially sets Sumatra PDF as default PDF viewer.
-You can make this local configuration a global configuration, when you put it at [the right place](http://tex.stackexchange.com/a/41149/9075).
-
-If you want to add more packages, configure it there.
-For instance, for support of `makeglossaries` see <http://tex.stackexchange.com/questions/1226/how-to-make-latexmk-use-makeglossaries>.
-
-### Debugging LaTeX errors
-
-In case something goes wrong, you can instruct the LaTeX compiler to stop at the first error:
-
-```bash
-lualatex --synctex=1 --shell-escape paper
-```
-
-Run `bibtex paper` to get the bibliography rendered (execute `lualatex` afterwards).
-
-### Advanced usage
-
-On the command line, there are additional features:
-
-- `latexmk -C` or `make clean` for cleaning up
-- `make format` to reformat the `.tex` files (one sentence per line and indent)
-- `make aspell` for interactive spell checking
-- `make stand`: Creates a new PDF with the current status of the document.
-- `make view`: Opens the configured viewer
-- `make mrproper`: Cleans up and removes also editor backup files.
-
-The `textlint` job of the `Check` workflow reports weakening words (e.g., "clearly", "just") in the English `.tex` files as annotations.
-Run it locally with `npx` (needs Node.js; rules come from `.textlintrc.json`):
-
-```bash
-npx --yes --package textlint --package textlint-plugin-latex2e --package textlint-filter-rule-allowlist --package textlint-rule-terminology --package textlint-rule-write-good textlint paper.tex
-```
+- Click on `Download ZIP` or [here](https://github.com/latextemplates/ieee-enhanced/archive/main.zip).
+- Extract `ieee-enhanced-main.zip` in the folder where you want to write your paper.
+- Edit [`paper.tex`](paper.tex).
+- Compile with "lualatex + bibtex" in your TeX editor or with `latexmk paper` / `make` on the command line.
 
 ## Benefits
 
@@ -119,13 +60,6 @@ Hints on writing an abstract and thesis by Dirk Fahland.
 
 There is currently no official biblatex support.
 A first step towards that is done at the [biblatex-ieee package](https://ctan.org/pkg/biblatex-ieee).
-
-## Quick start
-
-- Click on `Download ZIP` or [here](https://github.com/latextemplates/IEEE/archive/main.zip).
-- Extract `main.zip` in the folder where you want to write your paper.
-- Edit [paper.tex](paper.tex).
-- `latexmk paper`.
 
 ## Using the template for a THU term paper
 
@@ -257,6 +191,67 @@ Independent of the chosen setup:
   Note that it is enough to point to `languagetool.jar`.
   **If TeXstudio doesn't fit your need, check [the list of all available LaTeX Editors](http://tex.stackexchange.com/questions/339/latex-editors-ides).**
 - Use [JabRef] to manage your bibliography (Windows: `choco install jabref`).
+
+### Using `latexmk`
+
+[latexmk] is a very smart tool for latex compilation.
+It executes the latex tools as often as needed to get the final PDF.
+(More information about why `latexmk` is great can be found at <https://tex.stackexchange.com/a/249243/9075>.)
+
+To build the whole document, execute following command.
+Note that this requires a working perl installation.
+
+```bash
+latexmk paper
+```
+
+To enable latexmk, please move `_latexmkrc` to `latexmkrc`.
+
+If you want automatic compilation use following command:
+
+```bash
+latexmk -pvc paper
+```
+
+This will also open a [Sumatra PDF] and only works with the supplied configuration.
+
+#### latexmk configuration
+
+This repository ships a `.latexmkrc` which is read by latexmk.
+In case there is a `_latexmkrc` file, you need to rename it to `.latexmkrc`.
+It is configured for Windows and especially sets Sumatra PDF as default PDF viewer.
+You can make this local configuration a global configuration, when you put it at [the right place](http://tex.stackexchange.com/a/41149/9075).
+
+If you want to add more packages, configure it there.
+For instance, for support of `makeglossaries` see <http://tex.stackexchange.com/questions/1226/how-to-make-latexmk-use-makeglossaries>.
+
+### Debugging LaTeX errors
+
+In case something goes wrong, you can instruct the LaTeX compiler to stop at the first error:
+
+```bash
+lualatex --synctex=1 --shell-escape paper
+```
+
+Run `bibtex paper` to get the bibliography rendered (execute `lualatex` afterwards).
+
+### Advanced usage
+
+On the command line, there are additional features:
+
+- `latexmk -C` or `make clean` for cleaning up
+- `make format` to reformat the `.tex` files (one sentence per line and indent)
+- `make aspell` for interactive spell checking
+- `make stand`: Creates a new PDF with the current status of the document.
+- `make view`: Opens the configured viewer
+- `make mrproper`: Cleans up and removes also editor backup files.
+
+The `textlint` job of the `Check` workflow reports weakening words (e.g., "clearly", "just") in the English `.tex` files as annotations.
+Run it locally with `npx` (needs Node.js; rules come from `.textlintrc.json`):
+
+```bash
+npx --yes --package textlint --package textlint-plugin-latex2e --package textlint-filter-rule-allowlist --package textlint-rule-terminology --package textlint-rule-write-good textlint paper.tex
+```
 
 ### VS Code configuration
 
