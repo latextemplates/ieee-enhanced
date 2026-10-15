@@ -7,6 +7,10 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ## [Unreleased]
 
+### Added
+
+- [TeXtidote](https://github.com/sylvainhalle/textidote) checks spelling, grammar, and style (configuration `.textidote`), for English documents in CI.
+
 ### Changed
 
 - `paper.tex` uses minted; the variant using the listings package is `paper-basic-listings.tex`.
