@@ -15,6 +15,10 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 - `paper.tex` uses minted; the variant using the listings package is `paper-basic-listings.tex`.
 
+### Fixed
+
+- Example texts: spelling and grammar fixed.
+
 ## [2026-10-15]
 
 ### Added
