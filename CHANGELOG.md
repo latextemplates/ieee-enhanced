@@ -10,6 +10,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 ### Added
 
 - The LaTeX hints show how to color table rows and cells (`\rowcolor`, `\cellcolor`). [scientific-thesis-template#87](https://github.com/latextemplates/scientific-thesis-template/pull/87)
+- `make log` shows the relevant messages of the LaTeX log (texlogsieve).
 
 ### Changed
 
