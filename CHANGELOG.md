@@ -37,6 +37,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 - README.md: the download link points to this repository.
 - textlint ignores expl3 function names, Markdown reference IDs, and the name of the markdown package.
 - `make view` opens the PDF on Linux and macOS.
+- README.md: the self-archiving FAQ names the `authorarchive` layout.
 
 ## [2026-10-14]
 
