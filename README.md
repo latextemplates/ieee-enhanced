@@ -63,8 +63,7 @@ A first step towards that is done at the [biblatex-ieee package](https://ctan.or
 
 ## Using the template for a THU term paper
 
-Technische Hochschule Ulm (THU) bases its term paper template on the IEEE conference template.
-To follow the THU requirements (as of the THU template v1.0 of 2023-09-23 by Markus Goldstein):
+If your seminar at the Technische Hochschule Ulm (THU) requires the IEEE conference format, adapt the template as follows (double check the requirements with your supervisor):
 
 - Enable page numbers: uncomment `\pagestyle{plain}` after `\maketitle`.
 - Use the THU affiliation in the author block:
