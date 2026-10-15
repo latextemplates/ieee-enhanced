@@ -354,7 +354,7 @@ python3 -m pip install --force-reinstall latexminted
 
 ### Q: Is it possible produce a self-archiving version?
 
-Use the [`authorarchive` package](https://ctan.org/pkg/authorarchive).
+Use the [`authorarchive` package](https://ctan.org/pkg/authorarchive) with the layout `IEEE`.
 
 ### Q: Can I also write in German?
 
