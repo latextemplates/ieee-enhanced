@@ -18,10 +18,10 @@ The LaTeX snippets this template is assembled from can be inspected at <https://
 ## Examples
 
 - [paper.pdf](https://latextemplates.github.io/ieee-enhanced/paper.pdf) - regular conference paper.
-- [paper-basic-listings.pdf](https://latextemplates.github.io/ieee-enhanced/paper-basic-listings.pdf) - the same paper with listings instead of minted.
+- [paper-basic-listings.pdf](https://latextemplates.github.io/ieee-enhanced/paper-basic-listings.pdf) - the same paper using the listings package (instead of minted) for source code.
 
-The source code examples use [minted], which highlights code best; it needs Python and [latexminted] (contained in the Docker image and on Overleaf).
-The `-basic-listings` variants use [listings] instead and need no extra setup.
+The source code examples use the [minted] package, which highlights code best; it needs Python and [latexminted] (contained in the Docker image and on Overleaf).
+The `-basic-listings` variants use the [listings] package instead and need no extra setup.
 
 ## Quick start
 
