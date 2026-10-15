@@ -83,32 +83,6 @@ Following additional files are included, which do not need to be adapted:
 - [Makefile](Makefile) - The Makefile. Builds on latexmk.
 - [Texlivefile](Texlivefile) - List of packages required for a minimal TeXLive installation.
 
-## Using the template for a THU term paper
-
-If your seminar at the Technische Hochschule Ulm (THU) requires the IEEE conference format, adapt the template as follows (double check the requirements with your supervisor):
-
-- Enable page numbers: uncomment `\pagestyle{plain}` after `\maketitle`.
-- Use the THU affiliation in the author block:
-
-  ```latex
-  \author{\IEEEauthorblockN{Given Name Surname}
-  \IEEEauthorblockA{\textit{Department of Computer Science} \\
-  \textit{Ulm University of Applied Sciences (THU)}\\
-  Ulm, Germany \\
-  youremail@thu.de}}
-  ```
-
-Everything else (A4 paper, numeric citations with `natbib` and `IEEEtranN`, `\citet`, links without colored boxes) is already set up.
-
-## Final submission
-
-### arXiv
-
-The first line of `paper.tex` is `\ifdefined\pdfoutput\pdfoutput=1\fi`.
-Keep it when uploading to arXiv: arXiv scans the first lines for `\pdfoutput=1` to decide between `pdflatex` and DVI-producing `latex`.
-Without the line, arXiv falls back to `latex`, which cannot build the modern fonts (they ship without Metafont sources) and aborts with an error such as `! I can't find file 'clmr28t10+20'`.
-See [this question on TeX.SE](https://tex.stackexchange.com/q/584702/9075) for details.
-
 ## LaTeX compilation
 
 Compile either in a Docker container (recommended) or with a LaTeX distribution installed on your machine.
@@ -252,19 +226,35 @@ You can manually trigger compilation by hitting the green button in the extensio
 
 [LTeX+] is an offline grammar and spell checker with support for LaTeX and Markdown.
 
-Add a magic comment to your files to tell LTeX+ which language to use:
+The main file starts with a magic comment that tells LTeX+ the language of the document: `% LTeX: language=en-US`.
+Add the same comment to further `.tex` files.
 
-```latex
-% LTeX: language=de-DE
-```
+## Using the template for a THU term paper
 
-If you want to use different languages in the text, use the `\foreignlanguage{language}{text}` command.
-LTeX+ will detect these elements and automatically switch the spell checker's language.
-For example:
+If your seminar at the Technische Hochschule Ulm (THU) requires the IEEE conference format, adapt the template as follows (double check the requirements with your supervisor):
 
-```latex
-\foreignlanguage{english}{Therefore, our proposed approach will change the world.}
-```
+- Enable page numbers: uncomment `\pagestyle{plain}` after `\maketitle`.
+- Use the THU affiliation in the author block:
+
+  ```latex
+  \author{\IEEEauthorblockN{Given Name Surname}
+  \IEEEauthorblockA{\textit{Department of Computer Science} \\
+  \textit{Ulm University of Applied Sciences (THU)}\\
+  Ulm, Germany \\
+  youremail@thu.de}}
+  ```
+
+Everything else (A4 paper, numeric citations with `natbib` and `IEEEtranN`, `\citet`, links without colored boxes) is already set up.
+
+## Final submission
+
+### arXiv
+
+The first line of `paper.tex` is `\ifdefined\pdfoutput\pdfoutput=1\fi`.
+Keep it when uploading to arXiv: arXiv scans the first lines for `\pdfoutput=1` to decide between `pdflatex` and DVI-producing `latex`.
+Without the line, arXiv falls back to `latex`, which cannot build the modern fonts (they ship without Metafont sources) and aborts with an error such as `! I can't find file 'clmr28t10+20'`.
+See [this question on TeX.SE](https://tex.stackexchange.com/q/584702/9075) for details.
+
 ## FAQs
 
 ### Q: How do I find the cause of a LaTeX error?
@@ -276,6 +266,16 @@ lualatex --synctex=1 --shell-escape paper
 ```
 
 Run `bibtex paper` to get the bibliography rendered (execute `lualatex` afterwards).
+
+### Q: How do I check a passage in another language?
+
+Use the `\foreignlanguage{language}{text}` command.
+LTeX+ will detect these elements and automatically switch the spell checker's language.
+For example:
+
+```latex
+\foreignlanguage{english}{Therefore, our proposed approach will change the world.}
+```
 
 ### Q: I have questions on the IEEEtran class itself.
 
