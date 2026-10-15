@@ -9,8 +9,8 @@
 % !BIB program = bibtex
 % -*- coding:utf-8 mod:LaTeX -*-
 %
-% vvvvvvvv  The content starts in line 492 (\begin{document}); the first
-%           heading (\section{Introduction}) is in line 556.
+% vvvvvvvv  The content starts in line 496 (\begin{document}); the first
+%           heading (\section{Introduction}) is in line 560.
 %           Everything above is the preamble: document class, packages, and settings.
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
@@ -234,6 +234,10 @@
 \makeatletter
 \patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@hyper@{\NAT@nm}}{}{}
 \makeatother
+
+% To embed the bibliography into the PDF (readers can extract it, e.g., with JabRef via "Import into library" on the PDF), uncomment:
+%\usepackage{embedfile}
+%\embedfile[mimetype=application/x-bibtex,desc=BibTeX entries of all references]{paper.bib}
 
 % Farbige Tabellen
 % ----------------
