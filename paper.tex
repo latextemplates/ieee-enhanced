@@ -8,8 +8,8 @@
 % !BIB program = bibtex
 % -*- coding:utf-8 mod:LaTeX -*-
 %
-% vvvvvvvv  The content starts in line 568 (\begin{document}); the first
-%           heading (\section{Introduction}) is in line 632.
+% vvvvvvvv  The content starts in line 579 (\begin{document}); the first
+%           heading (\section{Introduction}) is in line 643.
 %           Everything above is the preamble: document class, packages, and settings.
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
@@ -69,7 +69,7 @@
 
 %% !!! If you change the font, be sure that words such as "workflow" can
 %% !!! still be copied from the PDF. If this is not the case, you have
-%% !!! to use glyphtounicode. See comment at cmap package.
+%% !!! to use glyphtounicode (pdflatex only). See the comment at \input{glyphtounicode}.
 %%
 %% Background: "workflow" contains "fl" which is a ligature, which in turn
 %%             is rendered as one character in the PDF and needs to be split
@@ -79,9 +79,8 @@
   \usepackage[no-math]{fontspec}
   \usepackage{unicode-math}
 
-  % Enable proper ligatures
+  % Enable proper ligatures for English documents (German documents use autotype, see ADR-0008)
   % For more information see https://ctan.org/pkg/selnolig
-  % language "english" or "ngerman" is passed to selnolig by the document class
   \usepackage{selnolig}
 
 \else
@@ -306,10 +305,22 @@
 \patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@hyper@{\NAT@nm}}{}{}
 \makeatother
 
-% Embed the bibliography data into the PDF so that readers can extract it
-% (e.g., with JabRef via "Import into library" on the PDF)
-\usepackage{embedfile}
-\embedfile[mimetype=application/x-bibtex,desc=BibTeX entries of all references]{paper.bib}
+% To embed the bibliography into the PDF (readers can extract it, e.g., with JabRef via "Import into library" on the PDF), uncomment:
+%\usepackage{embedfile}
+%\embedfile[mimetype=application/x-bibtex,desc=BibTeX entries of all references]{paper.bib}
+
+% Self-archiving version (e.g., for your homepage): uncomment the following lines and fill in the data of the publication.
+% The package adds the copyright notice of the publisher and a link to the published version, see https://ctan.org/pkg/authorarchive.
+%\usepackage[IEEE]{authorarchive}
+%\authorsetup{
+%  key={lastname-paper-YYYY},                 % basename of the PDF (and of the .bib file)
+%  year={YYYY},
+%  publication={Proceedings of the Conference},
+%  startpage={1},
+%  doi={10.0000/00000},
+%  baseurl={https://www.example.org/papers}, % where you publish the PDF
+%  nobib,                                    % remove to embed <key>.bib (the BibTeX entry of this paper) into the PDF
+%}
 
 % Farbige Tabellen
 % ----------------
@@ -974,6 +985,25 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
     \midrule
     One      & Two      \\
     Three    & Four     \\
+    \bottomrule
+  \end{tabular}
+\end{figure}
+\end{ltgexample}
+
+Rows and cells can be colored with \verb|\rowcolor| and \verb|\cellcolor| from the \href{https://ctan.org/pkg/colortbl}{colortbl} package, which \href{https://ctan.org/pkg/xcolor}{xcolor} loads with its option \verb|table|.
+
+\begin{ltgexample}
+\begin{figure}
+  \caption{Table with colored cells}
+  \label{tab:colored}
+  \centering
+  \begin{tabular}{ll}
+    \toprule
+    \rowcolor{gray!20}
+    Test & Result                   \\
+    \midrule
+    A    & \cellcolor{green!20}pass \\
+    B    & \cellcolor{red!20}fail   \\
     \bottomrule
   \end{tabular}
 \end{figure}

@@ -67,9 +67,9 @@ jobs:
 
           # remove files which should not be overwritten
 
-          # _latexmkrc alternates between including and excluding "--shell-escape"; we just want to keep the minted + en version of it
+          # .latexmkrc alternates between including and excluding "--shell-escape"; we just want to keep the minted + en version of it
           if [ "${{ matrix.listings }}" != "minted" ]; then
-            rm _latexmkrc
+            rm .latexmkrc
             rm -r .github/workflows
           fi
 
@@ -104,8 +104,6 @@ jobs:
         with:
           ref: '${{ github.event.pull_request.head.ref }}'
       - run: |
-          # use latexmkrc (which is disabled due to easy overleaf usage)
-          cp _latexmkrc latexmkrc
       - name: Install TeX Live
         uses: zauguin/install-texlive@v4
         with:
