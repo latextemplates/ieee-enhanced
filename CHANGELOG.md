@@ -11,6 +11,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 - The LaTeX hints show how to color table rows and cells (`\rowcolor`, `\cellcolor`). [scientific-thesis-template#87](https://github.com/latextemplates/scientific-thesis-template/pull/87)
 - `make log` shows the relevant messages of the LaTeX log (texlogsieve).
+- `paper.tex` shows how to produce a self-archiving version (`authorarchive`, commented out).
 
 ### Changed
 
@@ -37,7 +38,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 - README.md: the download link points to this repository.
 - textlint ignores expl3 function names, Markdown reference IDs, and the name of the markdown package.
 - `make view` opens the PDF on Linux and macOS.
-- README.md: the self-archiving FAQ names the `authorarchive` layout.
+- README.md: the self-archiving FAQ points to the example in `paper.tex`.
 
 ## [2026-10-14]
 
