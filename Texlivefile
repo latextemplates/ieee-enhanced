@@ -95,9 +95,12 @@ lineno
 lipsum
 listings
 lscapeenhanced
+ltmermaid
 ltxcmds
 luacode
 lualatex-math
+luamplib
+metapost
 luatex85
 luatexbase
 luaxml
@@ -110,6 +113,7 @@ fancyvrb
 verse
 mathdesign
 mathtools
+metauml
 mfirstuc
 microtype
 mindflow
@@ -136,6 +140,7 @@ pdfpages
 pdftexcmds
 pgf
 pgfplots
+pgf-umlsd
 pict2e
 placeins
 plantuml
