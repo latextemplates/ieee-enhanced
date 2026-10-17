@@ -36,6 +36,7 @@ Following features are enabled in this template:
 
 - Provides a skeletal [paper.tex](paper.tex) file
 - Shows how IEEE copyright notice can be added.
+- References show the DOI, as the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) asks for (`IEEEtranN-doi.bst`, a copy of `IEEEtranN.bst` with DOI output).
 - (Optional) Typesetting of listings using advanced highlighting powered by the [minted] package.
   `minted` provides better output than [listings], but requires [latexminted] to be installed.
 - Generated PDF allows for copy and paste of text without getting words with [ligatures](https://en.wikipedia.org/wiki/Typographic_ligature) such as "workflow" destroyed.
@@ -54,7 +55,7 @@ Following features are enabled in this template:
 - Ready-to-go configuration for [latexindent].
 - Proper hyphenation and microtype for English texts.
 
-## Disabled features
+### Disabled features
 
 Following features were not activated for this template.
 You can run the [latex template generator] to enable the features.
@@ -252,7 +253,7 @@ If your seminar at the Technische Hochschule Ulm (THU) requires the IEEE confere
   youremail@thu.de}}
   ```
 
-Everything else (A4 paper, numeric citations with `natbib` and `IEEEtranN`, `\citet`, links without colored boxes) is already set up.
+Everything else (A4 paper, numeric citations with `natbib` and `IEEEtranN-doi`, `\citet`, links without colored boxes) is already set up.
 
 ## Final submission
 
