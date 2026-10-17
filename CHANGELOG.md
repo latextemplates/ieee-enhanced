@@ -7,6 +7,10 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ## [Unreleased]
 
+### Added
+
+- References show the DOI (`IEEEtranN-doi.bst`). [#18](https://github.com/latextemplates/ieee-enhanced/issues/18)
+
 ### Changed
 
 - README.md: "Disabled features" is a subsection of "Benefits".
