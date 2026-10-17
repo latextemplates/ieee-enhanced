@@ -1,7 +1,7 @@
 %%
 %% IEEEtranN-doi.bst
 %% IEEEtranN.bst (version 1.14) modified to output the DOI as
-%% ", doi: 10.xxx" before the URL, as the IEEE Reference Guide
+%% ", doi: 10.xxx" before the URL (also after a note), as the IEEE Reference Guide
 %% (V 3.28.2025) asks for. Modified by the latextemplates project,
 %% https://github.com/latextemplates/generator-latex-template;
 %% report problems there, not to the original author.
@@ -1983,6 +1983,8 @@ FUNCTION {format.doi}
     { "" }
     { this.to.prev.status
       this.status.std
+      % the IEEE Reference Guide puts a comma before the DOI, also after a note
+      punct.comma 'prev.status.punct :=
       "doi: \BIBdoi{" doi * "}" *
     }
   if$
