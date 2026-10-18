@@ -8,8 +8,8 @@
 % !BIB program = bibtex
 % -*- coding:utf-8 mod:LaTeX -*-
 %
-% vvvvvvvv  The content starts in line 628 (\begin{document}); the first
-%           heading (\section{Introduction}) is in line 692.
+% vvvvvvvv  The content starts in line 630 (\begin{document}); the first
+%           heading (\section{Introduction}) is in line 694.
 %           Everything above is the preamble: document class, packages, and settings.
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
@@ -42,6 +42,8 @@
 % Even though `american`, `english` and `USenglish` are synonyms for babel package (according to https://tex.stackexchange.com/questions/12775/babel-english-american-usenglish), the llncs document class is prepared to avoid the overriding of certain names (such as "Abstract." -> "Abstract" or "Fig." -> "Figure") when using `english`, but not when using the other 2.
 % english has to go last to set it as the default language
 \usepackage[ngerman,main=english]{babel}
+% babel replaces IEEEtran's "Fig." by "Figure"; the IEEE Editorial Style Manual asks for "Fig. 1." in captions
+\addto\captionsenglish{\renewcommand{\figurename}{Fig.}}
 %
 % Hint by http://tex.stackexchange.com/a/321066/9075 -> enable "= as dashes
 \addto\extrasenglish{\languageshorthands{ngerman}\useshorthands{"}}
