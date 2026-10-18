@@ -215,12 +215,12 @@
 % Alternative: \usepackage{cite}, which enables \cite{ref1, ref2} only (otherwise: Error message: "White space in argument")
 
 % Doc: http://texdoc.net/natbib
+% The IEEE Reference Guide writes reference ranges out: [1], [2], [3], not [1]-[3]
 \usepackage[%
   square,        % for square brackets
   comma,         % use commas as separators
   numbers,       % for numerical citations;
-  %sort           % orders multiple citations into the sequence in which they appear in the list of references;
-  sort&compress  % as sort but in addition multiple numerical citations are compressed if possible (as 3-6, 15);
+  sort           % orders multiple citations into the sequence in which they appear in the list of references;
 ]{natbib}
 
 % Same fontsize as without natbib

@@ -36,7 +36,10 @@ Following features are enabled in this template:
 
 - Provides a skeletal [paper.tex](paper.tex) file
 - Shows how IEEE copyright notice can be added.
-- References show the DOI, as the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) asks for (`IEEEtranN-doi.bst`, a copy of `IEEEtranN.bst` with DOI output).
+- References follow the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) (`IEEEtranN-doi.bst`, a modified copy of `IEEEtranN.bst`):
+  - They show the DOI.
+  - Repeated author names are written out instead of a dash.
+  - Citation ranges are written out: `[1], [2], [3]` instead of `[1]–[3]`.
 - (Optional) Typesetting of listings using advanced highlighting powered by the [minted] package.
   `minted` provides better output than [listings], but requires [latexminted] to be installed.
 - Generated PDF allows for copy and paste of text without getting words with [ligatures](https://en.wikipedia.org/wiki/Typographic_ligature) such as "workflow" destroyed.
