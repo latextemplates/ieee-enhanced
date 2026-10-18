@@ -17,6 +17,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 - References: repeated author names are written out instead of a dash, as in the current [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf).
 - Citation ranges are written out (`[1], [2], [3]` instead of `[1]–[3]`), as the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) (V 3.28.2025) now asks for.
+- References in the text as the [IEEE Editorial Style Manual](https://journals.ieeeauthorcenter.ieee.org/your-role-in-article-production/ieee-editorial-style-manual/) asks for: "Fig. 1" (also at the beginning of a sentence), "(1)" for equations ("Equation (1)" at the beginning of a sentence).
 - Markdown example: "a whole section" instead of "a longer part".
 - CI: aspell, textlint, and TeXtidote also check the Markdown files.
 - CI and `make spellcheck`: aspell and TeXtidote run in the [Docker image by DANTE e.V.](https://hub.docker.com/r/danteev/texlive).
