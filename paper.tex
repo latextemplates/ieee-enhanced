@@ -754,7 +754,9 @@ Demonstration of zref-clever: Zcref (short for zcref[S]) at the beginning of a s
   \label{fig:ex:cref}
 \end{figure}
 
-\begin{figure}
+\begin{table}
+  \caption{Example table for zcref demo}
+  \label{tab:ex:cref}
   \centering
   \begin{tabular}{ll}
     \toprule
@@ -764,9 +766,7 @@ Demonstration of zref-clever: Zcref (short for zcref[S]) at the beginning of a s
     Three    & Four     \\
     \bottomrule
   \end{tabular}
-  \caption{Example table for zcref demo}
-  \label{tab:ex:cref}
-\end{figure}
+\end{table}
 
 \begin{ltgexample}
 \Zcref{fig:ex:cref} shows a simple fact, although \zcref{fig:ex:cref} could also show something else.
@@ -910,10 +910,8 @@ Coordinates can also be given explicitly instead of as a function:
 
 \subsection{Tables}
 
-Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begin{figure}+.
-
 \begin{ltgexample}
-\begin{figure}
+\begin{table}
   \caption{Simple Table}
   \label{tab:simple}
   \centering
@@ -925,13 +923,13 @@ Note that IEEE does not support \verb+\begin{table}+, one has to use \verb+\begi
     Three    & Four     \\
     \bottomrule
   \end{tabular}
-\end{figure}
+\end{table}
 \end{ltgexample}
 
 Rows and cells can be colored with \verb|\rowcolor| and \verb|\cellcolor| from the \href{https://ctan.org/pkg/colortbl}{colortbl} package, which \href{https://ctan.org/pkg/xcolor}{xcolor} loads with its option \verb|table|.
 
 \begin{ltgexample}
-\begin{figure}
+\begin{table}
   \caption{Table with colored cells}
   \label{tab:colored}
   \centering
@@ -944,12 +942,12 @@ Rows and cells can be colored with \verb|\rowcolor| and \verb|\cellcolor| from t
     B    & \cellcolor{red!20}fail   \\
     \bottomrule
   \end{tabular}
-\end{figure}
+\end{table}
 \end{ltgexample}
 
 \begin{ltgexample}
 % Adapted from https://tex.stackexchange.com/a/468994/9075
-\begin{figure}
+\begin{table}
   \caption{Table with diagonal line}
   \label{tab:diag}
   \begin{center}
@@ -961,7 +959,7 @@ Rows and cells can be colored with \verb|\rowcolor| and \verb|\cellcolor| from t
       \hline
     \end{tabular}
   \end{center}
-\end{figure}
+\end{table}
 \end{ltgexample}
 
 
