@@ -13,11 +13,11 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Changed
 
-- README.md: "Disabled features" is a subsection of "Benefits".
 - References: repeated author names are written out instead of a dash.
 - Citation ranges are written out (`[1], [2], [3]` instead of `[1]–[3]`).
-- README.md: differences to the IEEEtran package on CTAN.
 - Markdown example: "a whole section" instead of "a longer part".
+- README.md: "Disabled features" is a subsection of "Benefits".
+- README.md: differences to the IEEEtran package on CTAN.
 
 ## [2026-10-16]
 
