@@ -20,6 +20,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 - References in the text as the [IEEE Editorial Style Manual](https://journals.ieeeauthorcenter.ieee.org/your-role-in-article-production/ieee-editorial-style-manual/) asks for: "Fig. 1" (also at the beginning of a sentence), "(1)" for equations ("Equation (1)" at the beginning of a sentence).
 - Captions read "Fig. 1." (babel had changed them to "Figure 1.").
 - `paper.tex` keeps the caption style of the document class, as `paper-basic-listings.tex` does (the `caption` package is no longer loaded).
+- The example tables are tables (caption "TABLE I" above) instead of figures.
 - Markdown example: "a whole section" instead of "a longer part".
 - CI: aspell, textlint, and TeXtidote also check the Markdown files.
 - CI and `make spellcheck`: aspell and TeXtidote run in the [Docker image by DANTE e.V.](https://hub.docker.com/r/danteev/texlive).
