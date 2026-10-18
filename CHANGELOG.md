@@ -10,14 +10,18 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 ### Added
 
 - References show the DOI (`IEEEtranN-doi.bst`). [#18](https://github.com/latextemplates/ieee-enhanced/issues/18)
+- A section written in plain Markdown (`content-markdown.md`; LuaLaTeX).
+- VS Code: [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) recommended, configured by `.markdownlint.yml`.
 
 ### Changed
 
 - References: repeated author names are written out instead of a dash, as in the current [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf).
 - Citation ranges are written out (`[1], [2], [3]` instead of `[1]–[3]`), as the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) (V 3.28.2025) now asks for.
 - Markdown example: "a whole section" instead of "a longer part".
+- CI: aspell, textlint, and TeXtidote also check the Markdown files.
 - README.md: "Disabled features" is a subsection of "Benefits".
 - README.md: differences to the IEEEtran package on CTAN.
+- README.md: markdownlint findings fixed.
 
 ## [2026-10-16]
 
