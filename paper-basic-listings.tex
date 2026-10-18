@@ -8,8 +8,8 @@
 % !BIB program = bibtex
 % -*- coding:utf-8 mod:LaTeX -*-
 %
-% vvvvvvvv  The content starts in line 621 (\begin{document}); the first
-%           heading (\section{Introduction}) is in line 685.
+% vvvvvvvv  The content starts in line 628 (\begin{document}); the first
+%           heading (\section{Introduction}) is in line 692.
 %           Everything above is the preamble: document class, packages, and settings.
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
@@ -510,6 +510,13 @@
 \zcsetup{cap, nameinlink=true}
 % \Zcref{...} is short for \zcref[S]{...}: capitalized, unabbreviated name at the beginning of a sentence
 \NewDocumentCommand{\Zcref}{s O{} m}{\IfBooleanTF{#1}{\zcref*[S,#2]{#3}}{\zcref[S,#2]{#3}}}
+% IEEE Editorial Style Manual: "Fig. 1" also at the beginning of a sentence, "Section II", "Table I";
+% equations as "(1)" in the text and as "Equation (1)" at the beginning of a sentence
+\zcLanguageSetup{english}{
+  type=figure, Name-sg=Fig., Name-pl=Figs.,
+  type=equation, Name-sg-ab={}, Name-pl-ab={},
+}
+\zcRefTypeSetup{equation}{abbrev}
 
 \usepackage{lipsum}
 
