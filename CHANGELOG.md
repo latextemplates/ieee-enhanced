@@ -12,6 +12,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 - References show the DOI (`IEEEtranN-doi.bst`). [#18](https://github.com/latextemplates/ieee-enhanced/issues/18)
 - A section written in plain Markdown (`content-markdown.md`; LuaLaTeX).
 - VS Code: [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) recommended, configured by `.markdownlint.yml`.
+- VS Code: LTeX+ knows the words of the aspell word lists (`.vscode/ltex.dictionary.<language>.txt`).
 - CI: [typos](https://github.com/crate-ci/typos) checks the spelling, also in comments (configured in `.typos.toml`).
 
 ### Changed
@@ -29,6 +30,10 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 - README.md: "Disabled features" is a subsection of "Benefits".
 - README.md: differences to the IEEEtran package on CTAN.
 - README.md: markdownlint findings fixed.
+
+### Removed
+
+- `paper.spell.good`: word list of a former spell check, no longer used.
 
 ### Fixed
 
