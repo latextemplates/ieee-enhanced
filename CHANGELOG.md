@@ -21,6 +21,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 - Captions read "Fig. 1." (babel had changed them to "Figure 1.").
 - `paper.tex` keeps the caption style of the document class, as `paper-basic-listings.tex` does (the `caption` package is no longer loaded).
 - The example tables are tables (caption "TABLE I" above) instead of figures.
+- Lines in minted listings are labeled with `\label` and referenced with `\zcref` like everything else (`\labelline` and `\refline` removed).
 - Markdown example: "a whole section" instead of "a longer part".
 - CI: aspell, textlint, and TeXtidote also check the Markdown files.
 - CI and `make spellcheck`: aspell and TeXtidote run in the [Docker image by DANTE e.V.](https://hub.docker.com/r/danteev/texlive).
