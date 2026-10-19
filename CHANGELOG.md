@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [Unreleased]
+
+### Added
+
+- References show the DOI (`IEEEtranN-doi.bst`). [#18](https://github.com/latextemplates/ieee-enhanced/issues/18)
+- A section written in plain Markdown (`content-markdown.md`; LuaLaTeX).
+- VS Code: [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) recommended, configured by `.markdownlint.yml`.
+- VS Code: LTeX+ knows the words of the aspell word lists (`.vscode/ltex.dictionary.<language>.txt`).
+- `make dictionaries` merges the word lists of aspell, LTeX+, and TeXtidote.
+- CI: after a push that changes a word list, the workflow `Dictionaries` runs `make dictionaries` and commits the merged word lists.
+- CI: [typos](https://github.com/crate-ci/typos) checks the spelling, also in comments (configured in `.typos.toml`).
+
+### Changed
+
+- References: repeated author names are written out instead of a dash, as in the current [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf).
+- Citation ranges are written out (`[1], [2], [3]` instead of `[1]–[3]`), as the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) (V 3.28.2025) now asks for.
+- References in the text as the [IEEE Editorial Style Manual](https://journals.ieeeauthorcenter.ieee.org/your-role-in-article-production/ieee-editorial-style-manual/) asks for: "Fig. 1" (also at the beginning of a sentence), "(1)" for equations ("Equation (1)" at the beginning of a sentence).
+- Captions read "Fig. 1." (babel had changed them to "Figure 1.").
+- `paper.tex` keeps the caption style of the document class, as `paper-basic-listings.tex` does (the `caption` package is no longer loaded).
+- The example tables are tables (caption "TABLE I" above) instead of figures.
+- Lines in minted listings are labeled with `\label` and referenced with `\zcref` like everything else (`\labelline` and `\refline` removed).
+- Markdown example: "a whole section" instead of "a longer part".
+- CI: aspell, textlint, and TeXtidote also check the Markdown files.
+- CI and `make spellcheck`: aspell and TeXtidote run in the [Docker image by DANTE e.V.](https://hub.docker.com/r/danteev/texlive).
+- README.md: FAQ on adding words (e.g., names of tools) to the spell checkers.
+- README.md: how to run the `make` targets in Docker without a local `make`.
+- README.md: "Disabled features" is a subsection of "Benefits".
+- README.md: differences to the IEEEtran package on CTAN.
+- README.md: markdownlint findings fixed.
+
+### Removed
+
+- `paper.spell.good`: word list of a former spell check, no longer used.
+
+### Fixed
+
+- Typos fixed, mostly in comments; German comments in the English files translated.
+
 ## [2026-10-16]
 
 ### Added
