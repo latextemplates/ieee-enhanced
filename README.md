@@ -501,6 +501,7 @@ Statement from IEEE:
 
 ## Further information
 
+- New to LaTeX? See the [LaTeX setup guide](https://github.com/latextemplates/scientific-thesis-template/blob/main/docs/latex-setup.md) for installing LaTeX and an editor.
 - Why the templates use which packages: [decision records of the template generator](https://github.com/latextemplates/generator-latex-template/tree/main/docs/decisions)
 - Other templates: <https://latextemplates.github.io/>
 - For German users, go to <https://texfragen.de/>.
