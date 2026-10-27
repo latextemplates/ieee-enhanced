@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [Unreleased]
+
+### Added
+
+- LaTeX hints: how to polish a single paragraph with `\looseness` once the text is final.
+
 ## [2026-10-26]
 
 ### Added
