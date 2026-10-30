@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Tables: `\tablefootnote` sets a footnote inside a floating table, where a plain `\footnote` is lost. [scientific-thesis-template#91](https://github.com/latextemplates/scientific-thesis-template/issues/91)
+- Smaller PDFs: when compiling with `--shell-escape`, [graphicscache](https://ctan.org/pkg/graphicscache) re-encodes every included image once (lossless, at most 300 dpi) and caches it in `graphicscache/`; without shell escape nothing changes.
+- Edits and comments by several authors: `\FA{added}`, `\FA*{removed}`, `\FA[comment]` ([phfcc](https://ctan.org/pkg/phfcc)), with the initials in the margin; one command per author, `\phfDisableCommentingCommands` for the final version.
+- README: an "Advanced quick start" sets up the document as a git repository with the template as remote, so template updates can be merged later; the FAQ on synchronizing updates points to it.
+- LaTeX hints: how to polish a single paragraph with `\looseness` once the text is final.
+
+### Fixed
+
+- `\textcomment`: the highlighted text breaks across lines with LuaLaTeX; before, a longer passage ran into the margin.
+
 ## [2026-10-26]
 
 ### Added
