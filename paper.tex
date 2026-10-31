@@ -8,8 +8,8 @@
 % !BIB program = bibtex
 % -*- coding:utf-8 mod:LaTeX -*-
 %
-% vvvvvvvv  The content starts in line 641 (\begin{document}); the first
-%           heading (\section{Introduction}) is in line 705.
+% vvvvvvvv  The content starts in line 650 (\begin{document}); the first
+%           heading (\section{Introduction}) is in line 714.
 %           Everything above is the preamble: document class, packages, and settings.
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
@@ -80,6 +80,15 @@
 \ifluatex
   \usepackage[no-math]{fontspec}
   \usepackage{unicode-math}
+
+  % IEEEtran's fonts (Times, Helvetica, Courier) as OpenType: fontspec would otherwise typeset the paper in Latin Modern
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Heros}
+  \setmonofont{TeX Gyre Cursor}
+  % compsoc journals use Palatino
+  \makeatletter
+  \@IEEEcompsocnotconfonly{\setmainfont{TeX Gyre Pagella}}
+  \makeatother
 
   % Enable proper ligatures for English documents (German documents use autotype, see ADR-0008)
   % For more information see https://ctan.org/pkg/selnolig
