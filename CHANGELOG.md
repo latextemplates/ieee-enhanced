@@ -13,7 +13,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Fixed
 
-- LuaLaTeX: the paper is typeset in Times, Helvetica and Courier (TeX Gyre Termes, Heros, Cursor) as IEEEtran intends, instead of Latin Modern.
+- LuaLaTeX: the paper is typeset in Times, Helvetica and Courier ([TeX Gyre Termes](https://tug.org/FontCatalogue/texgyretermes/), [Heros](https://tug.org/FontCatalogue/texgyreheros/), [Cursor](https://tug.org/FontCatalogue/texgyrecursor/)) as IEEEtran intends, instead of Latin Modern.
 
 ## [2026-10-30]
 
