@@ -57,6 +57,12 @@ Following features are enabled in this template:
     For the original output, use `\bibliographystyle{IEEEtranN}`.
   - Citation ranges are written out: `[1], [2], [3]` instead of `[1]–[3]`.
     For ranges, use the natbib option `sort&compress` instead of `sort`.
+- The fonts IEEEtran intends (Times, Helvetica, Courier) with both engines; with LuaLaTeX, fontspec would otherwise fall back to Latin Modern.
+
+  | Engine   | Text            | Sans            | Code             | Math              |
+  |----------|-----------------|-----------------|------------------|-------------------|
+  | pdfLaTeX | Nimbus Roman    | Nimbus Sans     | newtxtt          | Computer Modern   |
+  | LuaLaTeX | TeX Gyre Termes | TeX Gyre Heros  | TeX Gyre Cursor  | Latin Modern Math |
 - (Optional) Typesetting of listings using advanced highlighting powered by the [minted] package.
   `minted` provides better output than [listings], but requires [latexminted] to be installed.
 - Generated PDF allows for copy and paste of text without getting words with [ligatures](https://en.wikipedia.org/wiki/Typographic_ligature) such as "workflow" destroyed.
