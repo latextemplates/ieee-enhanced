@@ -59,10 +59,11 @@ Following features are enabled in this template:
     For ranges, use the natbib option `sort&compress` instead of `sort`.
 - The fonts IEEEtran intends (Times, Helvetica, Courier) with both engines; with LuaLaTeX, fontspec would otherwise fall back to Latin Modern.
 
-  | Engine   | Text | Sans | Code | Math |
-  |----------|------|------|------|------|
+  | Engine | Text | Sans | Code | Math |
+  | --- | --- | --- | --- | --- |
   | pdfLaTeX | Nimbus Roman | Nimbus Sans | [newtxtt](https://tug.org/FontCatalogue/newtxtt/) | [Computer Modern](https://tug.org/FontCatalogue/computermodern/) |
   | LuaLaTeX | [TeX Gyre Termes](https://tug.org/FontCatalogue/texgyretermes/) | [TeX Gyre Heros](https://tug.org/FontCatalogue/texgyreheros/) | [TeX Gyre Cursor](https://tug.org/FontCatalogue/texgyrecursor/) | [Latin Modern Math](https://tug.org/FontCatalogue/latinmodernroman/) |
+
 - (Optional) Typesetting of listings using advanced highlighting powered by the [minted] package.
   `minted` provides better output than [listings], but requires [latexminted] to be installed.
 - Generated PDF allows for copy and paste of text without getting words with [ligatures](https://en.wikipedia.org/wiki/Typographic_ligature) such as "workflow" destroyed.
