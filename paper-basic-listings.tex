@@ -8,8 +8,8 @@
 % !BIB program = bibtex
 % -*- coding:utf-8 mod:LaTeX -*-
 %
-% vvvvvvvv  The content starts in line 717 (\begin{document}); the first
-%           heading (\section{Introduction}) is in line 781.
+% vvvvvvvv  The content starts in line 718 (\begin{document}); the first
+%           heading (\section{Introduction}) is in line 782.
 %           Everything above is the preamble: document class, packages, and settings.
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
@@ -619,13 +619,14 @@
     listing only,
     % Split across columns and pages. An unbreakable box overflows into the floats or the bottom margin when the floats of a page leave the narrow columns too little room
     breakable,
-    listing file=\currfilepath,
+% \currfilename, not \currfilepath: a chapter is read through the import path of subfiles, which minted would prepend once more
+    listing file=\currfilename,
     colback=green!5!white,
     colframe=green!25,
     coltitle=black!90,
     coltext=black!90,
     left=8mm,
-    title=Corresponding \LaTeX{} code of \texttt{\currfilepath},
+    title=Corresponding \LaTeX{} code of \texttt{\currfilename},
     listing options={
         frame=none,
         language={[LaTeX]TeX},
