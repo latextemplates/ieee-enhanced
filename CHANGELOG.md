@@ -7,6 +7,10 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ## [Unreleased]
 
+### Added
+
+- README: side-by-side comparison of the same text rendered with the publisher's class as distributed and with this template (first, middle and last page; sources in `comparison/`).
+
 ### Fixed
 
 - The date "(2015/08/26)" no longer appears before the reference list (a wrapped banner comment of `IEEEtranN-doi.bst`).
