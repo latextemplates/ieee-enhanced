@@ -15,6 +15,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Fixed
 
+- `rotating` is loaded before `tablefootnote`, so packages added later that need it (`ctable`, `sidewaystable`) no longer fail with "Package rotating loaded after tablefootnote". [scientific-thesis-template#101](https://github.com/latextemplates/scientific-thesis-template/issues/101)
 - The date "(2015/08/26)" no longer appears before the reference list (a wrapped banner comment of `IEEEtranN-doi.bst`).
 
 ## [2026-11-01]
