@@ -26,6 +26,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Fixed
 
+- Warnings in the log of a clean build are gone: "Command `\@parboxrestore` has changed", "Token not allowed in a PDF string" (the todo on abbreviations), `ifplatform` under pdfLaTeX, and the undefined italic shape of Inconsolata under LuaLaTeX; the diagonal-cell table uses `\centering`. [scientific-thesis-template#135](https://github.com/latextemplates/scientific-thesis-template/issues/135)
 - LuaLaTeX: math and siunitx numbers are set in TeX Gyre Termes Math (Pagella Math for compsoc journals), the math font matching the text font; before, they were Latin Modern Math and differed in design and weight from numbers in the text. [scientific-thesis-template#36](https://github.com/latextemplates/scientific-thesis-template/issues/36)
 - `rotating` is loaded before `tablefootnote`, so packages added later that need it (`ctable`, `sidewaystable`) no longer fail with "Package rotating loaded after tablefootnote". [scientific-thesis-template#101](https://github.com/latextemplates/scientific-thesis-template/issues/101)
 - The date "(2015/08/26)" no longer appears before the reference list (a wrapped banner comment of `IEEEtranN-doi.bst`).
