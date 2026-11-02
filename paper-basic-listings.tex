@@ -10,7 +10,7 @@
 % Generated with generator-latex-template 2026.11.1 for latextemplates/ieee-enhanced
 %
 % vvvvvvvv  The content starts in line 747 (\begin{document}); the first
-%           heading (\section{Introduction}) is in line 812.
+%           heading (\section{Introduction}) is in line 813.
 %           Everything above is the preamble: document class, packages, and settings.
 
 % DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
@@ -786,7 +786,8 @@
 \iffalse
   \IEEEoverridecommandlockouts
   \IEEEpubid{\begin{minipage}{\textwidth}\ \\[12pt] \centering
-      % IEEE\@. : \@ marks the end of the sentence after a capital letter (otherwise LaTeX assumes an abbreviation)
+      % IEEE\@. : after a capital letter, LaTeX takes the period for an abbreviation and sets the narrow space;
+      % \@ restores the sentence space, since the sentence ends here.
       1551-3203 \copyright 2015 IEEE\@. % chktex 8
       Personal use is permitted, but republication/redistribution requires IEEE permission.
       \\
@@ -1222,8 +1223,11 @@ Scaling shrinks the font, so for a table with long text in its cells, prefer wra
 \subsection{Source Code}
 
 \begin{ltgexample}
-% \@ before the period: LaTeX takes a period after a capital letter for an abbreviation (as in "e.g.") and sets
-% the narrow inter-word space; \@ tells it that the sentence ends here, so it sets the wider sentence space.
+% After a period, LaTeX sets the wider sentence space by default. The exception: a period after a capital letter
+% is taken for an abbreviation or initial ("T. Scientist", "NASA") and gets the narrow inter-word space.
+% "XML." ends a sentence, so \@ before the period restores the sentence space.
+% (The other way round, "e.g.\ details" forces the narrow space after a lowercase abbreviation; ~ is a
+% non-breaking inter-word space, as in "Prof.~Dr.~Eike Kraft".)
 \Zcref{lst:XML} shows source code written in XML\@.
 \Zcref{line:comment} contains a comment.
 
