@@ -7,6 +7,10 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ## [Unreleased]
 
+### Added
+
+- Under LuaLaTeX, a `\usepackage{newtxtext}` added by hand stops the build with a clear error instead of silently changing the fonts and the quotes in the bibliography.
+
 ### Fixed
 
 - Under LuaLaTeX, the four `Font shape `TU/ptm/m/n' undefined` warnings at the class load are gone.
