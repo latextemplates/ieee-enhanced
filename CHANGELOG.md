@@ -18,7 +18,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Fixed
 
-- Under LuaLaTeX, the four `Font shape `TU/ptm/m/n' undefined` warnings at the class load are gone.
+- Under LuaLaTeX, the four ``Font shape `TU/ptm/m/n' undefined`` warnings at the class load are gone.
 - The wide-table example is scaled to the column width (`\linewidth`), not to `\textwidth`, which let it run into the other column.
 - `minted` listings use the same font size as `listings` ones (`\footnotesize`) instead of the text size.
 
