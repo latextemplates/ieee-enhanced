@@ -9,6 +9,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Added
 
+- `IEEEtranN-doi.bst` reports its own version (3, 2026/11/03) in the BibTeX banner and the `.bbl`, next to the IEEEtranN.bst 1.14 it is based on.
 - Under LuaLaTeX, a `\usepackage{newtxtext}` added by hand stops the build with a clear error instead of silently changing the fonts and the quotes in the bibliography.
 
 ### Fixed
