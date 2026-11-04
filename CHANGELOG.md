@@ -13,6 +13,10 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 - FAQ on what IEEE PDF eXpress needs from the final PDF (embedded fonts, no Type 3, paper size) and how to check it.
 - Under LuaLaTeX, loading `newtxmath` stops with an error pointing to `\setmathfont`, like `newtxtext` already does.
 
+### Changed
+
+- `IEEEtranN-doi.bst` version 4 follows the IEEE Reference Guide (V 3.28.2025) in 101 of its 145 examples (version 3: 20): days in dates, `urldate` as "Accessed:", `language` as "(in Russian)", `translator`, `eid` as "Art. no.", `part`, series in parentheses after book titles, volume/editors/edition order in collections, "Standard" and "M.S. thesis" spelled out, and the entry types `online` (web page), `video`, `dataset`, and `software`.
+
 ### Fixed
 
 - README: the font list is a plain sentence instead of a table inside the list (the table made the whole list loose), and names the real LuaLaTeX math font, TeX Gyre Termes Math.
