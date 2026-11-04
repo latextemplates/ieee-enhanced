@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- The `Update Files` workflow generates all variants in one job and pushes one commit instead of one per variant.
+
+### Added
+
+- `IEEEtranN-doi.bst` reports its own version (3, 2026/11/03) in the BibTeX banner and the `.bbl`, next to the IEEEtranN.bst 1.14 it is based on.
+- Under LuaLaTeX, a `\usepackage{newtxtext}` added by hand stops the build with a clear error instead of silently changing the fonts and the quotes in the bibliography.
+
+### Fixed
+
+- Under LuaLaTeX, the four ``Font shape `TU/ptm/m/n' undefined`` warnings at the class load are gone.
+- The wide-table example is scaled to the column width (`\linewidth`), not to `\textwidth`, which let it run into the other column.
+- `minted` listings use the same font size as `listings` ones (`\footnotesize`) instead of the text size.
+
 ## [2026-11-03]
 
 ### Added
