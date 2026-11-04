@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [Unreleased]
+
+### Added
+
+- FAQ on what IEEE PDF eXpress needs from the final PDF (embedded fonts, no Type 3, paper size) and how to check it.
+- Under LuaLaTeX, loading `newtxmath` stops with an error pointing to `\setmathfont`, like `newtxtext` already does.
+
+### Fixed
+
+- README: the font list is a plain sentence instead of a table inside the list (the table made the whole list loose), and names the real LuaLaTeX math font, TeX Gyre Termes Math.
+
 ## [2026-11-04]
 
 ### Changed
