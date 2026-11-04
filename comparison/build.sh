@@ -19,6 +19,8 @@ if [ "$step" = pdf ] || [ "$step" = all ]; then
   latexmk -jobname=comparison-ours comparison/ours.tex
   # plain.tex as the publisher compiles it: pdflatex + bibtex
   latexmk -pdf -pdflatex='pdflatex %O %S' -bibtex -jobname=comparison-plain comparison/plain.tex
+  # Every example of the IEEE Reference Guide next to the output of IEEEtranN-doi.bst (see the README)
+  latexmk -pdf -pdflatex='pdflatex %O %S' -bibtex -jobname=comparison-reference-guide comparison/reference-guide.tex
 fi
 
 if [ "$step" = png ] || [ "$step" = all ]; then
