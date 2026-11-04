@@ -70,12 +70,8 @@ Following features are enabled in this template:
   - Citation ranges are written out: `[1], [2], [3]` instead of `[1]–[3]`.
     For ranges, use the natbib option `sort&compress` instead of `sort`.
 - The fonts IEEEtran intends (Times, Helvetica, Courier) with both engines; with LuaLaTeX, fontspec would otherwise fall back to Latin Modern.
-
-  | Engine | Text | Sans | Code | Math |
-  | --- | --- | --- | --- | --- |
-  | pdfLaTeX | Nimbus Roman | Nimbus Sans | [newtxtt](https://tug.org/FontCatalogue/newtxtt/) | [Computer Modern](https://tug.org/FontCatalogue/computermodern/) |
-  | LuaLaTeX | [TeX Gyre Termes](https://tug.org/FontCatalogue/texgyretermes/) | [TeX Gyre Heros](https://tug.org/FontCatalogue/texgyreheros/) | [TeX Gyre Cursor](https://tug.org/FontCatalogue/texgyrecursor/) | [Latin Modern Math](https://tug.org/FontCatalogue/latinmodernroman/) |
-
+  pdfLaTeX uses Nimbus Roman, Nimbus Sans, [newtxtt](https://tug.org/FontCatalogue/newtxtt/) for code, and [Computer Modern](https://tug.org/FontCatalogue/computermodern/) for math.
+  LuaLaTeX uses [TeX Gyre Termes](https://tug.org/FontCatalogue/texgyretermes/), [TeX Gyre Heros](https://tug.org/FontCatalogue/texgyreheros/), [TeX Gyre Cursor](https://tug.org/FontCatalogue/texgyrecursor/) for code, and TeX Gyre Termes Math for math.
 - (Optional) Typesetting of listings using advanced highlighting powered by the [minted] package.
   `minted` provides better output than [listings], but requires [latexminted] to be installed.
 - Generated PDF allows for copy and paste of text without getting words with [ligatures](https://en.wikipedia.org/wiki/Typographic_ligature) such as "workflow" destroyed.
@@ -423,6 +419,13 @@ The [flushend](https://ctan.org/pkg/flushend) package balances them automaticall
 An `\AtEndDocument` hook in the preamble (right after `\usepackage{flushend}`) activates flushend for the last page and, when the text ends in the first column, ends that column, so that flushend distributes the text over both columns.
 If you do not want balanced columns, remove `\usepackage{flushend}` together with that hook.
 If flushend produces odd spacing on the last page (IEEEtran's author warns about that for references), balance by hand instead: remove flushend and enable `\IEEEtriggeratref{N}` in front of `\bibliographystyle`, which starts a new column before reference `N`.
+
+### Q: What does IEEE PDF eXpress need from the final PDF?
+
+All fonts embedded, no Type 3 fonts, and the paper size of the call for papers.
+The template meets the font requirements with both engines: pdfLaTeX embeds Type 1 fonts, LuaLaTeX embeds OpenType fonts (`pdffonts` lists them as "CID Type 0C").
+The paper size is the `a4paper` or `letterpaper` option of `\documentclass`; most IEEE conferences want US letter.
+Check with `pdffonts paper.pdf` (every row "emb yes", no "Type 3") and `pdfinfo paper.pdf` ("Page size").
 
 ### Q: How can I synchronize updates from the template to my repository?
 
