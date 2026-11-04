@@ -69,6 +69,7 @@ Following features are enabled in this template:
   Differences to the [IEEEtran package](https://ctan.org/pkg/ieeetran) on CTAN:
   - `IEEEtranN-doi.bst` is `IEEEtranN.bst` changed by [`IEEEtranN-doi.bst.patch`](https://github.com/latextemplates/generator-latex-template/blob/main/generators/app/templates/IEEEtranN-doi.bst.patch):
     references show the DOI (", doi: 10.xxx"), and repeated author names are written out instead of a dash.
+    The entry formats follow the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) (V 3.28.2025), checked example by example in [comparison-reference-guide.pdf](https://latextemplates.github.io/ieee-enhanced/comparison-reference-guide.pdf): dates with days, `urldate` as "Accessed:", `language` as "(in Russian)", `translator`, `eid` as "Art. no.", `part`, and the entry types `online` (web page), `video`, `dataset`, and `software`.
     For the original output, use `\bibliographystyle{IEEEtranN}`.
   - Citation ranges are written out: `[1], [2], [3]` instead of `[1]–[3]`.
     For ranges, use the natbib option `sort&compress` instead of `sort`.
