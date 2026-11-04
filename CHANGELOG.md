@@ -9,6 +9,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Added
 
+- `comparison/reference-guide.tex` typesets every example of the IEEE Reference Guide (V 3.28.2025) next to the output of `IEEEtranN-doi.bst`; `comparison/build.sh` builds it and gh-pages publishes `comparison-reference-guide.pdf`.
 - FAQ on what IEEE PDF eXpress needs from the final PDF (embedded fonts, no Type 3, paper size) and how to check it.
 - Under LuaLaTeX, loading `newtxmath` stops with an error pointing to `\setmathfont`, like `newtxtext` already does.
 
