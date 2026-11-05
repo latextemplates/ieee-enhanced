@@ -71,9 +71,7 @@ Following features are enabled in this template:
     `IEEEtran-doi.bst` is the same modification of `IEEEtran.bst` for a document without natbib: copy it next to your `.tex` file and use `\bibliographystyle{IEEEtran-doi}` with the plain `\cite`.
   - Citation ranges are written out: `[1], [2], [3]` instead of `[1]–[3]`.
     For ranges, use the natbib option `sort&compress` instead of `sort`.
-- The fonts IEEEtran intends (Times, Helvetica, Courier) with both engines; with LuaLaTeX, fontspec would otherwise fall back to Latin Modern.
-  pdfLaTeX uses Nimbus Roman, Nimbus Sans, [newtxtt](https://tug.org/FontCatalogue/newtxtt/) for code, and [Computer Modern](https://tug.org/FontCatalogue/computermodern/) for math.
-  LuaLaTeX uses [TeX Gyre Termes](https://tug.org/FontCatalogue/texgyretermes/), [TeX Gyre Heros](https://tug.org/FontCatalogue/texgyreheros/), [TeX Gyre Cursor](https://tug.org/FontCatalogue/texgyrecursor/) for code, and TeX Gyre Termes Math for math.
+- The fonts IEEEtran intends (Times, Helvetica, Courier) with both engines; with LuaLaTeX, fontspec would otherwise fall back to Latin Modern (see the table below).
 - (Optional) Typesetting of listings using advanced highlighting powered by the [minted] package.
   `minted` provides better output than [listings], but requires [latexminted] to be installed.
 - Generated PDF allows for copy and paste of text without getting words with [ligatures](https://en.wikipedia.org/wiki/Typographic_ligature) such as "workflow" destroyed.
@@ -91,6 +89,13 @@ Following features are enabled in this template:
 - [latexmk] for easy compilation of the LaTeX document.
 - Ready-to-go configuration for [latexindent].
 - Proper hyphenation and microtype for English texts.
+
+The fonts differ between the engines:
+
+| Engine | Text | Sans | Code | Math |
+| --- | --- | --- | --- | --- |
+| pdfLaTeX | Nimbus Roman | Nimbus Sans | [newtxtt](https://tug.org/FontCatalogue/newtxtt/) | [Computer Modern](https://tug.org/FontCatalogue/computermodern/) |
+| LuaLaTeX | [TeX Gyre Termes](https://tug.org/FontCatalogue/texgyretermes/) | [TeX Gyre Heros](https://tug.org/FontCatalogue/texgyreheros/) | [TeX Gyre Cursor](https://tug.org/FontCatalogue/texgyrecursor/) | [TeX Gyre Termes Math](https://www.gust.org.pl/projects/e-foundry/tg-math) |
 
 ### Disabled features
 
