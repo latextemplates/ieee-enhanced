@@ -9,6 +9,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Added
 
+- `IEEEtran-doi.bst`, the same modification of the plain `IEEEtran.bst` for papers without natbib, ships next to `IEEEtranN-doi.bst`.
 - `comparison/reference-guide-bibtex.tex` and `comparison/reference-guide-biblatex.tex` typeset every example of the IEEE Reference Guide (V 3.28.2025) next to the output of `IEEEtranN-doi.bst` and of `biblatex-ieee`; the `reference-guide` job of `check.yml` builds them and gh-pages publishes the PDFs.
 - FAQ on what IEEE PDF eXpress needs from the final PDF (embedded fonts, no Type 3, paper size) and how to check it.
 - Under LuaLaTeX, loading `newtxmath` stops with an error pointing to `\setmathfont`, like `newtxtext` already does.
