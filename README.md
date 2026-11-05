@@ -35,10 +35,6 @@ The sources are in [comparison/](comparison/); `comparison/build.sh` renders the
 
 ![Last page: as distributed (left) and this template (right)](https://latextemplates.github.io/ieee-enhanced/comparison-last.png)
 
-[comparison-reference-guide-bibtex.pdf](https://latextemplates.github.io/ieee-enhanced/comparison-reference-guide-bibtex.pdf) shows every example of the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) (V 3.28.2025) next to the output of `IEEEtranN-doi.bst`, so that the two can be compared.
-[comparison-reference-guide-biblatex.pdf](https://latextemplates.github.io/ieee-enhanced/comparison-reference-guide-biblatex.pdf) does the same for `biblatex-ieee` as distributed by TeX Live.
-The documents and the entries come from [biblatex-ieee](https://github.com/koppor/biblatex-ieee) (directory `ieee-reference-guide/`); the `reference-guide` job of `check.yml` builds them.
-
 ## Quick start
 
 - Click on `Download ZIP` or download [ieee-enhanced-main.zip](https://github.com/latextemplates/ieee-enhanced/archive/main.zip).
@@ -572,7 +568,7 @@ Then, automatic installation should work again.
 4. Use [pdfscissors](https://sites.google.com/site/pdfscissors) to crop the borders and title (maybe you have to allow <https://sites.google.com> in the Java security center in the control panel).
 5. Include the PDF in LaTeX via `\includegraphics{chart_cropped.pdf}`.
 
-## Attention regarding `compsocconf`
+## `compsocconf` option is not needed any more
 
 Some conferences distribute a `IEEEtran.cls` V1.7a dated 2007 and a parameter `compsocconf`.
 **The parameter `compsocconf` was NEVER included in Michael Shell's `IEEEtran.cls` file. It is unclear, who did this patch and why it is around in the wild.**
@@ -609,6 +605,12 @@ Hence, **double check with your conference whether you have to use `compsoc` or 
 Statement from IEEE:
 
 > Please note that, as stated on the webpage <https://www.ieee.org/conferences_events/conferences/publishing/templates.html>. "IEEE does not require a specific format for their conference articles". Thus, we dot not purport that the "compsoc" is a requirement for publishing conference papers with us.
+
+## Note on the reference style
+
+[comparison-reference-guide-bibtex.pdf](https://latextemplates.github.io/ieee-enhanced/comparison-reference-guide-bibtex.pdf) shows every example of the [IEEE Reference Guide](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf) (V 3.28.2025) next to the output of `IEEEtranN-doi.bst`, so that the two can be compared.
+[comparison-reference-guide-biblatex.pdf](https://latextemplates.github.io/ieee-enhanced/comparison-reference-guide-biblatex.pdf) does the same for `biblatex-ieee` as distributed by TeX Live.
+The documents and the entries come from [biblatex-ieee](https://github.com/koppor/biblatex-ieee) (directory `ieee-reference-guide/`); the `reference-guide` job of `check.yml` builds them.
 
 ## Further information
 
