@@ -172,6 +172,32 @@ jobs:
           path: |
             comparison-*.png
             comparison-*.pdf
+  reference-guide:
+    # Every example of the IEEE Reference Guide next to the output of IEEEtranN-doi.bst and of biblatex-ieee (see the README)
+    name: reference-guide (comparison/reference-guide-*.tex)
+    if: github.repository == 'latextemplates/ieee-enhanced'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@c9f3ea3d51b2e04d092c4f9d208a19542d5dabcf # v4.5.0
+        with:
+          package_file: '${{ github.workspace }}/Texlivefile'
+          texlive_version: 2026
+      - name: Prepare latexmk
+        run: |
+          updmap -sys
+          texhash
+          tlmgr generate language --rebuild-sys
+      - name: Typeset with IEEEtranN-doi.bst (pdflatex + bibtex)
+        run: latexmk -pdf -pdflatex='pdflatex %O %S' -bibtex -interaction=nonstopmode -jobname=comparison-reference-guide-bibtex comparison/reference-guide-bibtex.tex
+      - name: Typeset with biblatex-ieee as distributed (lualatex + biber)
+        run: latexmk -lualatex -interaction=nonstopmode -jobname=comparison-reference-guide-biblatex comparison/reference-guide-biblatex.tex
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: reference-guide
+          path: comparison-reference-guide-*.pdf
   chktex:
     runs-on: ubuntu-latest
     steps:

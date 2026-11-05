@@ -333,10 +333,10 @@ ENTRY
     year
     yearfiled
     doi
-  eid
-  part
-  translator
-  urldate
+    eid
+    part
+    translator
+    urldate
     CTLuse_article_number
     CTLuse_paper
     CTLuse_url
