@@ -1621,6 +1621,21 @@ FUNCTION {format.date.electronic}
   if$
 }
 
+% "(n.d.)" for an online document without a date (IEEE Reference Guide, "Style")
+FUNCTION {format.date.electronic.nd}
+{ year empty$ month empty$ and
+    { this.to.prev.status
+      this.status.std
+      "(n.d.)"
+      punct.period 'this.status.punct :=
+      space.normal 'this.status.space :=
+      quote.no 'this.status.quote :=
+      cap.yes  'status.cap :=
+    }
+    { format.date.electronic }
+  if$
+}
+
 
 
 %% edition/title
@@ -2324,9 +2339,9 @@ FUNCTION {electronic}
   name.or.dash
   author empty$
     { format.article.title.electronic output
-      format.date.electronic output
+      format.date.electronic.nd output
     }
-    { format.date.electronic output
+    { format.date.electronic.nd output
       format.article.title.electronic output
     }
   if$

@@ -13,7 +13,7 @@
 %%   4 (2026/11/05): entry formats of the IEEE Reference Guide: days in dates,
 %%                   urldate ("Accessed:"), language ("(in Russian)"),
 %%                   translator, eid ("Art. no."), part, series in parentheses
-%%                   after book titles, volume/editors/edition order in
+%%                   after book titles, "(n.d.)" without a date, volume/editors/edition order in
 %%                   collections, "Standard", "M.S. thesis", "Paper", and the
 %%                   entry types online (web page), video, dataset, software
 %%   3 (2026/11/03): banners name this file and its version, not only IEEEtranN.bst
@@ -1690,6 +1690,21 @@ FUNCTION {format.date.electronic}
   if$
 }
 
+% "(n.d.)" for an online document without a date (IEEE Reference Guide, "Style")
+FUNCTION {format.date.electronic.nd}
+{ year empty$ month empty$ and
+    { this.to.prev.status
+      this.status.std
+      "(n.d.)"
+      punct.period 'this.status.punct :=
+      space.normal 'this.status.space :=
+      quote.no 'this.status.quote :=
+      cap.yes  'status.cap :=
+    }
+    { format.date.electronic }
+  if$
+}
+
 
 
 %% edition/title
@@ -2393,9 +2408,9 @@ FUNCTION {electronic}
   name.or.dash
   author empty$
     { format.article.title.electronic output
-      format.date.electronic output
+      format.date.electronic.nd output
     }
-    { format.date.electronic output
+    { format.date.electronic.nd output
       format.article.title.electronic output
     }
   if$
