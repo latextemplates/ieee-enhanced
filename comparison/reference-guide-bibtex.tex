@@ -1,0 +1,297 @@
+% !TeX program = pdflatex
+% !BIB program = bibtex
+% Every example of the IEEE Reference Guide (V 3.28.2025) next to the output of IEEEtranN-doi.bst,
+% so that differences can be spotted by eye. Text and examples come from biblatex-ieee's
+% ieee-reference-guide-biblatex.tex (https://github.com/koppor/biblatex-ieee), vendored by
+% scripts/ieee-reference-guide.py of generator-latex-template. Do not edit.
+% Built by the reference-guide job of check.yml: pdflatex + bibtex, from the directory of paper.tex.
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext}
+\usepackage[english]{babel}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers,sort]{natbib}
+\usepackage{bibentry}
+% bibentry captures each entry up to " \par"; IEEEtran's entries end with a control word, which
+% swallows that space, so capture up to "\par". The .bbl's \providecommands are local to
+% \nobibliography's group, so they are repeated here.
+\makeatletter
+\def\BR@c@bibitem#1 #2\par{{\let\protect\@unexpandable@protect
+      \expandafter \gdef\csname BR@r@#1\@extra@b@citeb\endcsname
+      {\BR@nodot#2\relax.\relax\relax}}}
+\makeatother
+\providecommand{\BIBdoi}[1]{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\BIBentrySTDinterwordspacing}{\spaceskip=0pt\relax}
+\providecommand{\BIBentryALTinterwordstretchfactor}{4}
+\providecommand{\BIBentryALTinterwordspacing}{\spaceskip=\fontdimen2\font plus
+  \BIBentryALTinterwordstretchfactor\fontdimen3\font minus \fontdimen4\font\relax}
+\providecommand{\BIBforeignlanguage}[2]{#2}
+
+\newlength{\guidenumwidth}
+\newlength{\guidelabelwidth}
+\settowidth{\guidenumwidth}{[000]\quad}
+\settowidth{\guidelabelwidth}{\textbf{IEEEtranN-doi:}\quad}
+\newcommand{\guiderow}[3]{%
+  \par\noindent
+  \makebox[\guidenumwidth][l]{#1}%
+  \makebox[\guidelabelwidth][l]{\textbf{#2}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\guidenumwidth-\guidelabelwidth\relax}
+    \raggedright #3%
+  \end{minipage}\par
+  \smallskip
+}
+% \guide{<key>}{<text of the guide>}: one unbreakable box per example
+\newcommand{\guide}[2]{%
+  \par\noindent
+  \begin{minipage}{\linewidth}
+    \guiderow{\cite{#1}}{Guide:}{#2}%
+    \guiderow{}{IEEEtranN-doi:}{\bibentry{#1}}%
+  \end{minipage}\par
+  \medskip
+}
+
+\title{IEEE Reference Guide examples typeset with IEEEtranN-doi.bst}
+\date{\today}
+
+\begin{document}
+\maketitle
+\nobibliography{comparison/reference-guide-bibtex}
+\bibliographystyle{IEEEtranN-doi}
+
+Each example of the
+\href{https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf}{IEEE Reference Guide, V 3.28.2025}
+is shown twice: as given in the guide (``Guide''; plain text, the guide's italics are not reproduced),
+and as typeset by IEEEtranN-doi.bst (``IEEEtranN-doi'') from the matching entry of comparison/reference-guide-bibtex.bib.
+The entries were written for biblatex-ieee and converted to BibTeX fields; types without an IEEEtran driver are entered as \texttt{@misc}.
+
+\section{Style}
+\guide{style:nodate}{BAR50 Series Infineon PIN Diode Datasheet. (n.d.). [Online]. Available: \url{http://www.infineon.com}}
+
+\section{Blogs}
+\guide{blog:weissberger}{A. Weissberger, “FCC approves EchoStar/Dish request to extend timeline for its 5G buildout,” IEEE ComSoc Technol. Blog, Sep. 23, 2024. [Online]. Available: \url{https://techblog.comsoc.org/2024/09/23/fcc-approves-echostar-dish-request-to-extend-timeline-for-its-5g-buildout/}}
+\guide{blog:owens}{M. Owens, “How two Cisco women leaned in and supercharged their careers,” Cisco Blogs, Jun. 23, 2023. [Online]. Available: \url{https://blogs.cisco.com/diversity/how-two-cisco-women-leaned-in-and-supercharged-their-careers}}
+
+\section{Books}
+\subsection{Book}
+\guide{book:klaus}{B. Klaus and P. Horn, Robot Vision. Cambridge, MA, USA: MIT Press, 1986.}
+\guide{book:stein}{L. Stein, “Random patterns,” in Computers and You, J. S. Brake, Ed., New York, NY, USA: Wiley, 1994, pp. 55–70.}
+\guide{book:myer}{R. L. Myer, “Parametric oscillators and nonlinear materials,” in Nonlinear Optics, vol. 4, P. G. Harper and B. S. Wherret, Eds., San Francisco, CA, USA: Academic, 1977, pp. 47–160.}
+\guide{book:abramowitz}{M. Abramowitz and I. A. Stegun, Eds., Handbook of Mathematical Functions (Applied Mathematics Series 55). Washington, DC, USA: NBS, 1964, pp. 32–33.}
+\guide{book:moore}{E. F. Moore, “Gedanken-experiments on sequential machines,” in Automata Studies (Ann. of Math. Studies, no. 1), C. E. Shannon and J. McCarthy, Eds., Princeton, NJ, USA: Princeton Univ. Press, 1965, pp. 129–153.}
+\guide{book:westinghouse}{Westinghouse Electric Corporation (Staff of Technology and Science, Aerospace Div.), Integrated Electronic Systems. Englewood Cliffs, NJ, USA: Prentice-Hall, 1970.}
+\guide{book:histace}{A. Histace, “Image restoration—Recent advances and applications,” in Super-Resolution Restoration and Image Reconstruction for Passive Millimeter Wave Imaging. Rijeka, Croatia: InTech, 2012, pp. 25–45.}
+
+\subsection{Books, Monographs (Online)}
+\guide{book:young}{G. O. Young, “Synthetic structure of industrial plastics,” in Plastics, vol. 3, Polymers of Hexadromicon, J. Peters, Ed., 2nd ed. New York, NY, USA: McGraw-Hill, 1964, pp. 15–64. [Online]. Available: \url{https://www.scirp.org}}
+\guide{book:terahertz}{The Terahertz Wave eBook. ZOmega Terahertz Corp., 2014. Accessed: May 19, 2014. [Online]. Available: \url{https://www.scribd.com/document/322662319/Thz-zomega-ebook-pdf-1206-sr-pdf}}
+\guide{book:kurland}{P. B. Kurland and R. Lerner, Eds. The Founders’ Constitution. Chicago, IL, USA: Univ. of Chicago Press, 1987. Accessed: Feb. 28, 2010. [Online]. Available: \url{http://press-pubs.uchicago.edu/founders/}}
+
+\subsection{Book (Foreign Publication or Translated)}
+\guide{book:ichiro}{K. Ichiro, Thai Economy and Railway 1885–1935, Tokyo: Nihon Keizai Hyoronsha (in Japanese), 2000.}
+\guide{book:pontryagin}{L. S. Pontryagin, V. G. Boltyanskii, R. V. Gamkrelidze, and E. F. Mishchenko, “The Maximum Principle,” in The Mathematical Theory of Optimal Processes, Moscow, USSR: Izdatel'stvo Nauka (in Russian), 1961, ch. 1, sect. 3, pp. 17-20.}
+\guide{book:dessalles}{J.-L. Dessalles, Why We Talk: The Evolutionary Origins of Language, trans. James Grieve. Oxford, U.K.: Oxford Univ. Press, 2007.}
+\guide{book:menchu}{R. Menchú, Crossing Borders, trans. Ann Wright, Ed., New York, NY, USA: Verso, 1999.}
+
+\subsection{Book With Chapter Title}
+\guide{book:ogura}{T. Ogura, “Electronic government and surveillance-oriented society,” in Theorizing Surveillance: The Panopticon and Beyond. Cullompton, U.K.: Willan, 2006, ch. 13, pp. 270–295.}
+\guide{book:li}{L. Li, J. Yang, and C. Li, “Super-resolution restoration and image reconstruction for passive millimeter wave imaging,” in Image Restoration—Recent Advances and Applications, A. Histace, Ed., Rijeka, Croatia: InTech, 2012, pp. 25–45.}
+
+\subsection{Book With Editor(s)}
+\guide{book:stein}{L. Stein, “Random patterns,” in Computers and You, J. S. Brake, Ed., New York, NY, USA: Wiley, 1994, pp. 55–70.}
+\guide{book:bennett}{C. Bennett, “What happens when you book an airline ticket? The collection and processing of passenger data post-9/11,” in Global Surveillance and Policing: Borders, Security, Identity, E. Zureik and M. Salter, Eds., Cullompton, U.K.: Willan, 2005, pp. 113–138.}
+\guide{book:leonard}{W. R. Leonard and M. H. Crawford, Eds. Human Biology of Pastoral Populations. New York, NY, USA: Cambridge Univ. Press, 2002.}
+
+\subsection{Book With Series Title, Volume Title, and Edition}
+\guide{book:feistauer}{M. Feistauer, “Irrotational Incompressible Flow,” in Mathematical Methods in Fluid Dynamics (Monographs and Surveys in Pure and Applied Mathematics Series, 67). Harlow, U.K.: Longman, 1993, ch. 2, pp. 77-186.}
+\guide{book:abramowitz}{M. Abramowitz and I. A. Stegun, Eds. Handbook of Mathematical Functions (Applied Mathematics Series 55). Washington, DC, USA: NBS, 1964, pp. 32–33.}
+\guide{book:moore}{E. F. Moore, “Gedanken-experiments on sequential machines,” in Automata Studies (Ann. of Math. Studies, no. 1), C. E. Shannon and J. McCarthy, Eds., Princeton, NJ, USA: Princeton Univ. Press, 1965, pp. 129–153.}
+
+\section{Conferences and Conference Proceedings}
+\subsection{Conference Paper (Paper Presented at a Conference)}
+\guide{conf:caratelli}{D. Caratelli, M. C. Viganó, G. Toso, and P. Angeletti, “Analytical placement technique for sparse arrays,” presented at the 32nd ESA Antenna Workshop, Noordwijk, The Netherlands, Oct. 5–8, 2010.}
+\guide{conf:kreifeldt}{J. G. Kreifeldt, “An analysis of surface-detected EMG as an amplitude-modulated noise,” presented at the 1989 Int. Conf. Med. Biol. Eng., Chicago, IL, USA, Nov. 9–12, 1989.}
+\guide{conf:juette}{G. W. Juette and L. E. Zeffanella, “Radio noise currents on short sections on bundle conductors,” presented at the IEEE Summer Power Meeting, Dallas, TX, USA, Jun. 22–27, 1990, Paper 90 SM 690-0 PWRS.}
+\guide{conf:arrillaga}{J. Arrillaga and B. Giessner, “Limitation of short-circuit levels by means of HVDC links,” presented at the IEEE Summer Power Meeting, Los Angeles, CA, USA, Jul. 12–17, 1990, Paper 70 CP 637.}
+
+\subsection{Conference Proceedings in Print}
+\guide{conf:amador}{A. Amador-Perez and R. A. Rodriguez-Solis, “Analysis of a CPW-fed annular slot ring antenna using DOE,” in Proc. IEEE Antennas Propag. Soc. Int. Symp., Jul. 2006, pp. 4301–4304.}
+\guide{conf:faulhaber}{G. R. Faulhaber, “Design of service systems with priority reservation,” in Conf. Rec. 1995 IEEE Int. Conf. Commun., pp. 3–8. (If the year is given in the conference title, it may be omitted from the end of the reference.)}
+\guide{conf:bingulac}{S. P. Bingulac, “On the compatibility of adaptive controllers,” in Proc. 4th Annu. Allerton Conf. Circuit Syst. Theory, New York, NY, USA, 1994, pp. 8–16.}
+\guide{conf:doyle}{W. D. Doyle, “Magnetization reversal in films with biaxial anisotropy,” in 1987 Proc. INTERMAG Conf., pp. 2.2-1–2.2-6.}
+\guide{conf:meadow}{C. T. Meadow and D. W. Waugh, “Computer assisted interrogation,” in 1991 Fall Joint Comput. Conf., Proc. AFIPS Conf., vol. 29. Washington, DC, USA: Spartan, 1991, pp. 381–394.}
+\guide{conf:parks}{P. C. Parks, “Lyapunov redesign of model reference adaptive control systems,” in 1993 Joint Automatic Control Conf., Preprints, pp. 485–491.}
+\guide{conf:hsia}{T. S. Hsia, “System identification,” in IEDM Tech. Dig., 1993, vol. 2, no. 8, pp. 6–13.}
+
+\subsection{Conference Proceedings With DOI}
+\guide{conf:veruggio}{G. Veruggio, “The EURON roboethics roadmap,” in Proc. Humanoids ’06: 6th IEEE-RAS Int. Conf. Humanoid Robots, 2006, pp. 612–617, doi: 10.1109/ICHR.2006.321337.}
+\guide{conf:zhao}{J. Zhao, G. Sun, G. H. Loh, and Y. Xie, “Energy-efficient GPU design with reconfigurable in-package graphics memory,” in Proc. ACM/IEEE Int. Symp. Low Power Electron. Design (ISLPED), Jul. 2012, pp. 403–408, doi: 10.1145/2333660.2333752.}
+
+\subsection{Conference Proceedings With Editors}
+\guide{conf:amadoreditors}{A. Amador-Perez and R. A. Rodriguez-Solis, “Analysis of a CPW-fed annular slot ring antenna using DOE,” in Proc. IEEE Antennas Propag. Soc. Int. Symp., A. Amador-Perez and R. A. Rodriguez-Solis, Eds. Jul. 2006, pp. 4301–4304.}
+\guide{conf:armstrong}{D. B. Armstrong, G. J. Fogarty, and D. Dingsdag, “Scales measuring characteristics of small business information systems,” in Proc. Res., Relevance Rigour: Coming of Age: 18th Australasian Conf. Inf. Syst., W-G. Tan, Ed. 2007, pp. 163–171.}
+\guide{conf:funes}{P. Funes, B. Orme, and E. Bonabeau, “Evolving emergent group behaviors for simple human agents,” in Proc. 7th Eur. Conf. Artif. Life, P. Dittrich and J. T. Kim, Eds. Sep. 2003, pp. 76–89.}
+
+\subsection{Conference Proceedings With Location}
+\guide{conf:carmichael}{L. S. Carmichael, N. Ghani, P. K. Rajan, K. O’Donoghue, and R. Holt, “Characterization and comparison of modern layer-2 Ethernet survivability protocols,” in Proc. 37th Southeastern Symp. Syst. Theory (SSST 2005), Tuskegee, AL, USA, Mar. 20–22, 2005, pp. 124–129.}
+\guide{conf:sarkar}{D. Sarkar and K. V. Srivastava, “SRR-loaded antipodal Vivaldi antenna for UWB applications with tunable notch function,” in Proc. Int. Symp. Electromagn. Theory, Hiroshima, Japan, 2013, pp. 466–469.}
+
+\subsection{Conference Proceedings With Series Title, Volume Title, and Edition}
+\guide{conf:amadorseries}{A. Amador-Perez and R. A. Rodriguez-Solis, “Analysis of a CPW-fed annular slot ring antenna using DOE,” in Proc. IEEE Antennas Propag. Soc. Int. Symp., in Slot Ring Antennas II, vol. 3, 2nd ed., Jul. 2006, pp. 4301–4304.}
+
+\subsection{Conference Paper Online}
+\guide{conf:process}{Process Software Corp., Framingham, MA, USA. Intranets: Internet technologies deployed behind the firewall for corporate productivity. Presented at INET’96 Annu. Meeting. [Online]. Available: \url{http://www.process.com/Intranets/wp2.htp}}
+\guide{conf:taylor}{J. A. Taylor. (Nov. 2006). Assessment: A tool for development and engagement in the first year of university study. Presented at Engaging Students: 9th Pacific Rim in Higher Education (FYHE) Conf., Griffith, Australia. [Online]. Available: \url{http://www.fyhe.com.au/past_papers/2006/Papers/Taylor.pdf}}
+\guide{conf:chandrasekaran}{V. Chandrasekaran, S. Sanghavi, P. A. Parrilo, and A. S. Willsky. (2009). Sparse and low-rank matrix decompositions. Presented at IFAC 2009. [Online]. Available: \url{http://www.sciencedirect.com/science/article/pii/S1474667016388632}}
+
+\subsection{Conference Proceedings Online}
+\guide{conf:schubert}{T. Schubert, “Real challenges and solutions for validating system-on-chip high level formal verification of next-generation microprocessors,” in Proc. 40th Design Automat. Conf. (DAC’03), Jun. 2–6, 2003. [Online]. Available: \url{https://www.dac.com/content/40th-dac}}
+\guide{conf:yanamadala}{J. Yanamadala et al., “Segmentation of the visible human project (VHP) female cryosection images within MATLAB environment,” in Proc. 23rd Int. Meshing Roundtable, London, U.K., Oct. 2014. [Online]. Available: \url{https://feup.libguides.com/ieee/comunicacoes}}
+
+\section{Course}
+\guide{course:argosy}{Argosy University Online. (2012). Information literacy and communication. [Online]. Available: \url{http://www.myeclassonline.com}}
+\guide{course:oden}{Q. Oden. Mud and Bones–Geology Coursepack. (2014, Winter). GEOG 042. Cranbrook, Canada: College of the Rockies}
+
+\section{Datasets}
+\guide{data:ansolabehere}{S. Ansolabehere, M. Palmer, and A. Lee, January 20, 2014, “Precinct-Level Election Data. V1,” distributed by Harvard Election Data Archive, \url{http://hdl.handle.net/1902.1/21919} UNF:5:5C9UfGjdLy2ONVPtgr45qA==}
+\guide{data:hhsdoi}{U.S. Department of Health and Human Services, Aug. 2013, “Treatment Episode Dataset: Discharges (TEDS-D): Concatenated, 2006 to 2009,” U.S. Department of Health and Human Services, Substance Abuse and Mental Health Services Administration, Office of Applied Studies, doi: 10.3886/ICPSR30122.v2.}
+\guide{data:hhsurl}{U.S. Department of Health and Human Services, Aug. 2013, “Treatment Episode Dataset: Discharges (TEDS-D): Concatenated, 2006 to 2009,” U.S. Department of Health and Human Services, Substance Abuse and Mental Health Services Administration, Office of Applied Studies. [Online]. Available: \url{http://www.icpsr.umich.edu/icpsrweb/SAMHDA/studies/30122/version/}}
+
+\section{Handbooks and Manuals}
+\subsection{Handbooks; Manual (Print)}
+\guide{manual:transmission}{Transmission Systems for Communications, 3rd ed., Western Electric Co., Winston-Salem, NC, USA, 1985, pp. 44–60.}
+\guide{manual:motorola}{Motorola Semiconductor Data Manual, Motorola Semiconductor Products Inc., Phoenix, AZ, USA, 1989.}
+\guide{manual:rca}{RCA Receiving Tube Manual, Radio Corp. of America, Electronic Components and Devices, Harrison, NJ, USA, Tech. Ser. RC23, 1992.}
+\guide{manual:microsoft}{Microsoft Office 97 Visual Basic Programmer’s Guide, Microsoft Professional Editions Series, Microsoft, Redmond, WA, USA, 1997.}
+
+\subsection{Manual (Online)}
+\guide{manual:breimann}{L. Breimann. Manual on Setting Up, Using, and Understanding Random Forests v4.0. (2003). Accessed: Apr. 16, 2014. [Online]. Available: \url{http://oz.berkeley.edu/users/breiman/Using_random_forests_v4.0.pdf}}
+\guide{manual:kuhn}{M. Kuhn. The Caret Package. (2012). [Online]. Available: \url{http://cranr-project.org/web/packages/caret/caret.pdf}}
+\guide{manual:antcom}{Antcom, Torrance, CA, USA. Antenna Products. (2011). Accessed: Feb. 12, 2014. [Online]. Available: \url{http://www.antcom.com/documents/catalogs/L1L2GPSAntennas.pdf}}
+
+\section{Lectures}
+\guide{lecture:barney}{J. Barney. (2011). Documenting literature [PowerPoint slides]. Available: \url{http://moodle.cotr/english/gill}}
+\guide{lecture:yardish}{Z. Yardish. Tumbling past data [Online]. Available: \url{http://www.statistics.cotr.ca/classes/statistics/Yardish/index.html}}
+\guide{lecture:argosy}{Argosy University Online. (2012). Information literacy and communication: Module 2 filing and organization. [Online]. Available: \url{http://www.myeclassonline.com}}
+
+\section{Legal Citations}
+\guide{legal:olmstead}{Olmstead v. United States, U.S. Reports, vol. 277, 1928, p. 438.}
+\guide{legal:olmsteaddissent}{Olmstead v. United States, U.S. Reports, vol. 277, 1928, p. 478 (Justice Brandeis, dissenting).}
+\guide{legal:councilman2003}{U.S. v. Councilman, Federal Supplement, 2nd Series, vol. 245, 2003, p. 321 (U.S. District Court for the District of Mass.).}
+\guide{legal:councilman2004}{U.S. v. Councilman, Federal Reporter, 3rd Series, vol. 373, 2004, p. 204 (U.S. Court of Appeals for the First Circuit).}
+\guide{legal:uscode}{U.S. Code, Title 18, section 3123(a)(1),(2), 2000 and 2002 Supplement.}
+\guide{legal:patriot}{Uniting and Strengthening America by Providing Appropriate Tools to Intercept and Obstruct Terrorism, Public Law No. 107-56, section 209, U.S. Statutes at Large, vol. 115, 2001, p. 285.}
+\guide{legal:omnibus}{Omnibus Crime Control and Safe Streets Act of 1968, Public Law No. 90-351, sections 801–804, U.S. Statutes at Large, vol. 82, pp. 211–223 (codified as amended in US Code, Title 18, sections 2510–2522, 2000 and 2002 Supplement).}
+
+\section{News Articles}
+\guide{news:markoff}{J. Markoff, “Software is smart enough for SAT, but still far from intelligent,” Buffalo News, Sep. 21, 2015.}
+\guide{news:johnson}{T. Johnson, “China sets goal of surpassing U.S. on artificial intelligence,” Sacramento Bee, Feb. 25, 2018.}
+\guide{news:clark}{A. Clark, “A new AI tool creates hyperrealistic photos. Can you tell the difference?” CBS News, Aug. 30, 2024. [Online]. Available: \url{https://www.cbsnews.com/news/can-you-tell-real-image-from-ai-flux/}}
+\guide{news:knight}{W. Knight, “The most capable open source AI model yet could supercharge AI agents,” Wired, Sep. 25, 2024. [Online]. Available: \url{https://www.wired.com/story/molmo-open-source-multimodal-ai-model-allen-institute-agents/}}
+
+\section{Online Video}
+\guide{video:mtaonline}{mtaOnline1, Fazi Mosque, U.K. An Occasionally Accurate History of Australia: Part I. (Oct. 23, 2006). Accessed: Oct. 6, 2010. [Online Video]. Available: \url{http://www.youtube.com/watch?v=IJjNsCVHc34}}
+\guide{video:doane}{Doane Academy, Burlington, NJ, USA. Second Grade Bossy R. (Feb. 28, 2013). Accessed: Jun. 3, 2018. [Online Video]. Available: \url{https://www.youtube.com/watch?v=PUKHo1Y-BcM}}
+
+\section{Patent}
+\guide{patent:wilkinson}{J. P. Wilkinson, “Nonlinear resonant circuit devices,” U.S. Patent 3 624 125, Jul. 16, 1990.}
+\guide{patent:mei}{T. Mei and T. Yang, “Circuit and method for average–current regulation of light-emitting diodes,” U.S. Patent 7 898 187 B1, 2011, Mar. 1, 2012.}
+\guide{patent:black}{W. W. Black and A. Clavin, “Dipole augmented slot radiating element,” U.S. Patent 3594806, Jul. 1971.}
+\guide{patent:voinigescu}{S. P. Voinigescu et al., Direct m-ary quadrature amplitude modulation (QAM) operating in saturated power mode,” U.S. Patent Appl. 20110013726A1, Jan. 20, 2011.}
+\guide{patent:klionovski}{K. Klionovski, “Broadband dual-band microstrip antenna,” (in Russian), RU Patent Utility Model 167296, Dec. 27, 2016.}
+\guide{patent:brooks}{Musical toothbrush with adjustable neck and mirror, by L. M. R. Brooks. (1992, May 19). Patent D 326 189 [Online]. Available: NEXIS Library: LEXPAT File: DESIGN}
+\guide{patent:williams}{Screwless clip mounted computer drive, by D. Williams. (2005, Apr. 26). U.S. Patent 6,885,550 [Online]. Available: \url{http://patft.uspto.gov/netacgi/6,885,550}}
+
+\section{Periodicals}
+\subsection{Periodicals}
+\guide{per:chiampi}{M. M. Chiampi and L. L. Zilberti, “Induction of electric field in human bodies moving near MRI: An efficient BEM computational procedure,” IEEE Trans. Biomed. Eng., vol. 58, pp. 2787–2793, Oct. 2011, doi: 10.1109/TBME.2011.2158315.}
+\guide{per:ito}{M. Ito et al., “Can the application of amorphous oxide TFT be an electrophoretic display?,” J. Non-Cryst. Solids, vol. 354, no. 19, pp. 2777–2782, Feb. 2008.}
+\guide{per:fardel}{R. Fardel, M. Nagel, F. Nuesch, T. Lippert, and A. Wokaun, “Fabrication of organic light emitting diode pixels by laser-assisted forward transfer,” Appl. Phys. Lett., vol. 91, no. 6, Aug. 2007, Art. no. 061103.}
+\guide{per:zhang}{J. Zhang and N. Tansu, “Optical gain and laser characteristics of InGaN quantum wells on ternary InGaN substrates,” IEEE Photon. J., vol. 5, no. 2, Apr. 2013, Art no. 2600111.}
+\guide{per:preu}{S. Preu, G.H.Döhler, S.Malzer, L.J.Wang, and A. C. Gossard,“Tunable continuous-wave terahertz photo mixer sources and applications,” J. Appl. Phys., vol. 109, Mar. 2011, Art. no. 061301.}
+\guide{per:azodolmolky}{S. Azodolmolky et al., Experimental demonstration of an impairment aware network planning and operation tool for transparent/translucent optical networks,” J. Lightw. Technol., vol. 29, no. 4, pp. 439–448, Sep. 2011.}
+\guide{per:eriksson}{H. Eriksson and P. E. Danielsson, “Two problems on Boolean memories,” IEEE Trans. Electron. Devices, vol. ED-11, no. 1, pp. 32–33, Jan. 1959.}
+\guide{per:aronowitz}{F. Aronowitz, “Theory of traveling-wave optical maser,” Phys. Rev., vol. 134, pp. A635–A646, Dec. 8, 1965.}
+\guide{per:lavrova}{Ye. V. Lavrova, “Geographic distribution of ionospheric disturbances in the F2 layer,” Tr. IZMIRAN, vol. 19, no. 29, pp. 31–43, 1961 (Transl.: E. R. Hope, Directorate of Scientific Information Services, Defence Research Board of Canada, Rep. T384R, Apr. 1963).}
+\guide{per:wigner}{E. P. Wigner, “On a modification of the Rayleigh–Schrodinger perturbation theory,” (in German), Math. Naturwiss. Anz. Ungar. Akad. Wiss., vol. 53, p. 475, 1935.}
+\guide{per:miller}{E. H. Miller, “A note on reflector arrays,” IEEE Trans. Antennas Propag., to be published. (Do not use “to appear in.”)}
+\guide{per:vatta}{F. Vatta, A. Soranzo, and F. Babich, “More accurate analysis of sum-product decoding of LDPC codes using a Gaussian approximation,” IEEE Commun. Lett., early access, Dec. 11, 2018, doi: 10.1109/LCOMM.2018.2886261.}
+\guide{per:kim}{C. K. Kim, “Effect of gamma rays on plasma,” submitted for publication.}
+\guide{per:rafferty}{W. Rafferty, “Ground antennas in NASA’s deep space telecommunications,” Proc. IEEE, vol. 82, no. 5, pp. 636-640, May 1994.}
+\guide{per:kopyt}{P. Kopyt et al., “Electric properties of graphene-based conductive layers from DC up to terahertz range,” IEEE THz Sci. Technol., to be published, doi: 10.1109/TTHZ.2016.2544142.}
+\guide{per:brunschwiler}{T. Brunschwiler et al., “Formulation of percolating thermal underfills using hierarchical self-assembly of microparticles and nanoparticles by centrifugal forces and capillary bridging,” J. Microelectron. Electron. Packag., vol. 9, no. 4, pp. 149–159, 2012, doi: 10.4071/imaps.357.}
+\guide{per:wu}{L. T. Wu et al., “Real-time analytic sensitivity method for transient security assessment and prevent control,” Proc. Inst. Elect. Eng., vol. 135, pt. C, pp. 107-117, Mar. 1988.}
+\guide{per:specialissue}{Special Issue on Artificial Neural Network Applications, Proc. IEEE, vol. 84, pp. 1353-1576, Oct. 1996.}
+\guide{per:aslip}{R. U. Aslip, “Surface and leaky wave antennas,” IEEE Trans. Circuits Syst. I, Fundam. Theory Appl., vol. 30, no.1, pp. 545–546, Jan. 2000.}
+
+\subsection{Periodical With Article ID}
+\guide{per:kuang}{L. Kuang et al., “A numerical method for analyzing electromagnetic scattering properties of a moving conducting object,” Int. J. Antennas Propag., vol. 2014, 2014, Art. no. 386315, doi: 10.1155/2014/386315.}
+\guide{per:yang}{X. Yang, W. Cao, Y. Lu, and Y. Zhou, “Hyperspectral image transformer classification networks,” IEEE Trans. Geosci. Remote Sens., vol. 60, 2022, Art. no. 5528715, doi: 10.1109/TGRS.2022.3171551.}
+
+\subsection{Periodical With DOI}
+\guide{per:chiampidoi}{M. M. Chiampi and L. L. Zilberti, “Induction of electric field in human bodies moving near MRI: An efficient BEM computational procedure,” IEEE Trans. Biomed. Eng., vol. 58, no. 10, pp. 2787–2793, Oct. 2011, doi: 10.1109/TBME.2011.2158315.}
+
+\subsection{Periodicals Online}
+\guide{per:risk}{W. P. Risk, G. S. Kino, and H. J. Shaw, “Fiber-optic frequency shifter using a surface acoustic wave incident at an oblique angle,” Opt. Lett., vol. 11, no. 2, pp. 115–117, Feb. 1986. [Online]. Available: \url{http://ol.osa.org/abstract.cfm?URI=ol-11-2-115}}
+
+\subsection{Virtual Journal}
+\guide{per:smith}{J. Smith, T. Jones, and B. Simpson, Eds., “IEEE Biometrics Compendium Issue 30 December 2017,” in IEEE Biometrics Compendium, Dec. 2017. [Online]. Available: \url{http://ieeexplore.ieee.org/virtual-journals/biocomp/issue/30/}}
+\guide{per:robertson}{T. Robertson, Ed., “RFIC Virtual Journal–Issue 6,” in IEEE RFIC Virtual Journal, Oct. 2014. [Online]. Available: \url{http://ieeexplore.ieee.org/virtual-journals/rfic/issue/6/}}
+\guide{per:rfid}{“RFID Virtual Journal–Issue 10,” in IEEE RFID Virtual Journal, Nov. 2015. [Online]. Available: \url{http://ieeexplore.ieee.org/virtual-journals/rfid/issue/10/}}
+
+\section{Reports}
+\guide{report:reber}{E. E. Reber, R. L. Michell, and C. J. Carter, “Oxygen absorption in the Earth’s atmosphere,” Aerospace Corp., Los Angeles, CA, USA, Tech. Rep. TR-0200 (4230-46)-3, Nov. 1988.}
+\guide{report:davis}{J. H. Davis and J. R. Cogdell, “Calibration program for the 16-foot antenna,” Elect. Eng. Res. Lab., Univ. Texas, Austin, Tech. Memo. NGL-006-69-3, Nov. 15, 1987.}
+\guide{report:haskell}{R. E. Haskell and C. T. Case, “Transient signal propagation in lossless isotropic plasmas,” USAF Cambridge Res. Labs., Cambridge, MA, USA, Rep. ARCRL-66-234 (II), 1994, vol. 2.}
+\guide{report:brusberg}{M. A. Brusberg and E. N. Clark, “Installation, operation, and data evaluation of an oblique-incidence ionosphere sounder system,” in “Radio Propagation Characteristics of the Washington-Honolulu Path,” Stanford Res. Inst., Stanford, CA, USA, Contract NOBSR-87615, Final Rep., Feb. 1995, vol. 1.}
+\guide{report:diament}{P. Diament, S. L. Richert, and W. L. Lupatkin, “V-line surface-wave radiation and scanning,” Dept. Elect. Eng., Columbia Univ., New York, NY, USA, Sci. Rep. 85, Aug. 1991.}
+
+\subsection{Report Online}
+\guide{report:hijmans}{R. J. Hijmans and J. van Etten, “Raster: Geographic analysis and modeling with raster data,” R Package Version 2.0-12, Jan. 12, 2012. [Online]. Available: \url{http://CRAN.R-project.org/package=raster}}
+\guide{report:teralyzer}{“Teralyzer,” Lytera UG, Kirchhain, Germany. Accessed: Jun. 5, 2014. [Online]. Available: \url{http://www.lytera.de/Terahertz_THz_Spectroscopy.php?id=home}}
+\guide{report:zhao}{F. Zhao, “Smartphone solutions white paper,” Shenzhen, China, Huawei, White Paper, 2012. [Online]. Available: \url{http://www.huawei.com/ilink/en/download/HW_193034}}
+\guide{report:bom}{Bureau of Meteorology, “Bureau of Meteorology: Measuring rainfall in Australia,” 2009. [Online]. Available: \url{http://www.bom.gov.au/climate/cdo/about/definitionsrain.shtml\#meanrainfall}}
+\guide{report:geobasis}{GeoBasisNRW. “ATKIS—Digitale Topographische Karte 1:25.000 (DTK25),” Bezirksregierung Köln, Cologne, Germany, 2012. [Online]. Available: \url{http://www.bezreg-koeln.nrw.de/brkinternet/presse/publikationen/geobasis/fal.pdf}}
+\guide{report:kagaku}{K. Kagaku, "Multipurpose chest phantom: Lungman.” Accessed: Apr. 17, 2014. [Online]. Available: \url{http://www.kyotokagaku.com/products/detail03/pdf/ph-1_catalog.pdf}}
+\guide{report:apple}{“Apple iPhone,” Apple Inc., Palo Alto, CA, USA. Accessed: Feb. 25, 2013. [Online]. Available: \url{http://apple.com/iphone/}}
+\guide{report:urazhdin}{S. Urazhdin, N. O. Birge, W. P. Pratt Jr., and J. Bass, “Current-driven magnetic excitations in permalloy-based multilayer nanopillars,” 2003. [Online]. Available: \url{http://cond-mat/0303149}}
+
+\section{Software}
+\guide{sw:antcom}{Antenna Products. (2011). Antcom. Accessed: January 11, 2019. [Online]. Available: \url{https://www.antcom.com/products}}
+\guide{sw:arning}{D. W. Arning et al. Mixed Mode–Mixed Level Circuit Simulator. (2011). Ngspice. Accessed: Jan. 11, 2019. [Online]. Available: \url{http://ngspice.sourceforge.net}}
+\guide{sw:msdn}{MSDN Library Visual Studio 6.0. (2001). Microsoft.}
+
+\section{Standards}
+\guide{std:itu}{Parameter Values for Ultra-High Definition Television Systems for Switzerland, Production and International Programme Exchange, Rec. ITU-R BT.2020-2, International Telecommunications Union, Geneva, Switzerland, Oct. 2015.}
+\guide{std:ieee308}{IEEE Criteria for Class IE Electric Systems, IEEE Standard 308, 1969.}
+\guide{std:ansi}{Letter Symbols for Quantities, ANSI Standard Y10.5-1968.}
+\guide{std:nerc}{Frequency Response and Bias, NERC Reliability Standard BAL-003-0.1b, May 2009. [Online]. Available: \url{http://www.nerc.com/files/BAL-003-0_1b.pdf}}
+
+\section{Theses and Dissertations}
+\guide{thesis:williams}{J. O. Williams, “Narrow-band analyzer,” Ph.D. dissertation, Dept. Elect. Eng., Harvard Univ., Cambridge, MA, USA, 1993.}
+\guide{thesis:kawasaki}{N. Kawasaki, “Parametric study of thermal and chemical nonequilibrium nozzle flow,” M.S. thesis, Dept. Electron. Eng., Osaka Univ., Osaka, Japan, 1993.}
+\guide{thesis:amer}{N. M. Amer, “The effects of homogeneous magnetic fields on developments of tribolium confusum,” Ph.D. dissertation, Radiation Lab., Univ. California, Berkeley, Tech. Rep. 16854, 1995.}
+\guide{thesis:becle}{C. Becle, These de doctoral d’etat, Univ. Grenoble, Grenoble, France, 1968.}
+\guide{thesis:jensen}{F. Jensen, “Electromagnetic near-field far-field correlations,” Ph.D. dissertation, Dept. Elect. Eng., Tech. Univ. Denmark, Lyngby, Denmark, 1970. [Online]. Available: \url{www.tud.ed/jensen/diss}}
+\guide{thesis:bordaouin}{H. Bordaouin, “ Unmanned aerial vehicles in flight simulations,”Ph.D. thesis, Dept. Aerospace Eng., Rutgers Univ., New Brunswick, NJ, USA, 2021. [Online]. Available: \url{https://its.not-a-real-thesis.pdf}}
+\guide{thesis:schwartz}{D. Schwartz, “Development of a computationally efficient full human body finite element model,” M.S. thesis, Virginia Tech – Wake Forest Univ. School of Biomed. Eng. Sci., Winston-Salem, NC, USA, 2015. [Online]. Available: \url{https://wakespace.lib.wfu.edu/bitstream/handle/10339/57119/Schwartz_wfu_0248M_10697.pdf}}
+
+\section{U.S. Government Documents}
+\guide{gov:house}{U.S. House. 102nd Congress, 1st Session. (1991, Jan. 11). H. Con. Res. 1, Sense of the Congress on Approval of Military Action. [Online]. Available: LEXIS Library: GENFED File: BILLS}
+
+\section{Unpublished}
+\guide{unpub:harrison}{A. Harrison, private communication, May 1995.}
+\guide{unpub:smith}{B. Smith, “An approach to graphs of linear forms,” unpublished.}
+\guide{unpub:brahms}{A. Brahms, “Representation error for real numbers in binary computer arithmetic,” IEEE Computer Group Repository, Paper R-67-85.}
+
+\subsection{Preprint arXiv}
+\guide{unpub:urazhdin}{S. Urazhdin, N. O. Birge, W. P. Pratt Jr., and J. Bass, “Current-driven magnetic excitations in permalloy-based multilayer nanopillars,” 2003, arXiv:0303149.}
+
+\section{Websites}
+\guide{web:smith}{J. Smith. “Obama inaugurated as President.” CNN.com. Accessed: Feb. 1, 2009. [Online.] Available: \url{http://www.cnn.com/POLITICS/01/21/obama_inaugurated/index.html}}
+\guide{web:smithdoe}{J. Smith and J. Doe. “Obama inaugurated as President.” CNN.com. Accessed: Feb. 1, 2009. [Online.] Available: \url{http://www.cnn.com/POLITICS/01/21/obama_inaugurated/index.html}}
+\guide{web:costanzo}{P. Costanzo, “Clemson orange uniforms are messing with the color on my TV. And apparently messing with the ND offense, too.” Twitter. Accessed Apr. 19, 2021. [Online.] Available: \url{https://twitter.com/PaulCostanzo/status/817826295707041793}}
+
+
+\end{document}

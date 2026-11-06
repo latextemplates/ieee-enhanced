@@ -129,6 +129,10 @@ jobs:
           execute_install_scripts: true # creates the "convert" alternative
       - name: Comparison with the publisher's class (see the README)
         run: ./comparison/build.sh
+      - name: Comparison with the IEEE Reference Guide (see the README)
+        run: |
+          latexmk -pdf -pdflatex='pdflatex %O %S' -bibtex -interaction=nonstopmode -jobname=comparison-reference-guide-bibtex comparison/reference-guide-bibtex.tex
+          latexmk -lualatex -interaction=nonstopmode -jobname=comparison-reference-guide-biblatex comparison/reference-guide-biblatex.tex
       - run: |
           mkdir publish
           cp *.pdf publish/
