@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://calver.org/).
 
+## [Unreleased]
+
+### Added
+
+- `IEEEtran-doi.bst`, the same modification of the plain `IEEEtran.bst` for papers without natbib, ships next to `IEEEtranN-doi.bst`.
+- `comparison/reference-guide-bibtex.tex` and `comparison/reference-guide-biblatex.tex` typeset every example of the IEEE Reference Guide (V 3.28.2025) next to the output of `IEEEtranN-doi.bst` and of `biblatex-ieee`; the `reference-guide` job of `check.yml` builds them and gh-pages publishes the PDFs.
+- FAQ on what IEEE PDF eXpress needs from the final PDF (embedded fonts, no Type 3, paper size) and how to check it.
+- Under LuaLaTeX, loading `newtxmath` stops with an error pointing to `\setmathfont`, like `newtxtext` already does.
+
+### Changed
+
+- `IEEEtranN-doi.bst` version 4 follows the IEEE Reference Guide (V 3.28.2025) in 101 of its 145 examples (version 3: 20): days in dates, `urldate` as "Accessed:", `language` as "(in Russian)", `translator`, `eid` as "Art. no.", `part`, series in parentheses after book titles, volume/editors/edition order in collections, "Standard" and "M.S. thesis" spelled out, and the entry types `online` (web page), `video`, `dataset`, and `software`.
+
+### Fixed
+
+- README: the font table stands after the benefits list instead of inside it (there it made the whole list loose), and names the real LuaLaTeX math font, TeX Gyre Termes Math.
+
 ## [2026-11-04]
 
 ### Changed
