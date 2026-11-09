@@ -20,7 +20,7 @@ From 2022-02-28 onwards, versioning is done using [Calendar Versioning](https://
 
 ### Fixed
 
-- README: the font list is a plain sentence instead of a table inside the list (the table made the whole list loose), and names the real LuaLaTeX math font, TeX Gyre Termes Math.
+- README: the font table stands after the benefits list instead of inside it (there it made the whole list loose), and names the real LuaLaTeX math font, TeX Gyre Termes Math.
 
 ## [2026-11-04]
 
