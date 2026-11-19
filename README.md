@@ -315,6 +315,12 @@ If your seminar at the Technische Hochschule Ulm (THU) requires the IEEE confere
 
 Everything else (A4 paper, numeric citations with `natbib` and `IEEEtranN-doi`, `\citet`, links without colored boxes) is already set up.
 
+## Anonymous submission (double-blind review)
+
+`paper-anon.tex` typesets `paper.tex` with every `\anon{...}` replaced by a gray bar: compile it with `latexmk paper-anon`.
+Wrap the authors, the affiliations, and the acknowledgments in `\anon{...}`; `\anon[6cm]{...}` sets the length of the bar.
+Write self-citations in the third person ("Doe et al. [3] showed" instead of "in our previous work [3]") and link an anonymized copy of your repository, e.g., via <https://anonymous.4open.science/>.
+
 ## Final submission
 
 ### arXiv
