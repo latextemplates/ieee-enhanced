@@ -19,6 +19,7 @@ The LaTeX snippets this template is assembled from can be inspected at <https://
 
 - [paper.pdf](https://latextemplates.github.io/ieee-enhanced/paper.pdf) - regular conference paper.
 - [paper-basic-listings.pdf](https://latextemplates.github.io/ieee-enhanced/paper-basic-listings.pdf) - the same paper using the listings package (instead of minted) for source code.
+- [paper-anon.pdf](https://latextemplates.github.io/ieee-enhanced/paper-anon.pdf) - the same paper anonymized for a double-blind review (see [Anonymous submission](#anonymous-submission-double-blind-review)).
 
 The source code examples use the [minted] package, which highlights code best; it needs Python and [latexminted] (contained in the Docker image and on Overleaf).
 The `-basic-listings` variants use the [listings] package instead and need no extra setup.
